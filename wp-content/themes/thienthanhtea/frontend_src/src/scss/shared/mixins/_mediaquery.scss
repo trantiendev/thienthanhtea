@@ -21,10 +21,3 @@
     @content
   }
 }
-
-@mixin centered($horizontal, $vertical) {
-  position: absolute;
-  left: $horizontal;
-  top: $vertical;
-  transform: translate(-$horizontal, -$vertical);
-}

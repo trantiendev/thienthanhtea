@@ -1,0 +1,11 @@
+.container {
+  width: $sreen-pc;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+
+  @include mediaquery--not-lg() {
+    padding-left: $col-gutter;
+    padding-right: $col-gutter;
+  }
+}
