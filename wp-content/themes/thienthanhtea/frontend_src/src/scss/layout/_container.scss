@@ -1,4 +1,4 @@
-.container {
+%container {
   width: $sreen-pc;
   max-width: 100%;
   margin: 0 auto;
@@ -8,4 +8,8 @@
     padding-left: $col-gutter;
     padding-right: $col-gutter;
   }
+}
+
+.container {
+  @extend %container;
 }
