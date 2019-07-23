@@ -18,4 +18,4 @@ Thumbs.db
 /npm-debug.log
 
 ## public file
-/public/*
+/public/*.html

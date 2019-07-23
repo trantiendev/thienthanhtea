@@ -1,23 +1,35 @@
-@mixin mediaquery--not-lg() {
-  @media (max-width: $sreen-pc - 1) {
-    @content
-  }
-}
-
-@mixin mediaquery--lg() {
-  @media (min-width: $sreen-pc) {
-    @content
-  }
-}
-
-@mixin mediaquery--md() {
-  @media (min-width: $sreen-mobile) and (max-width: $sreen-pc - 1) {
-    @content
+@mixin mediaquery--xs() {
+  @media screen and (max-width: $screen-xs) {
+    @content;
   }
 }
 
 @mixin mediaquery--sm() {
-  @media (max-width: $sreen-mobile - 1) {
-    @content
+  @media screen and (max-width: $screen-md - 1) {
+    @content;
+  }
+}
+
+@mixin mediaquery--not-sm() {
+  @media screen and (min-width: $screen-md) {
+    @content;
+  }
+}
+
+@mixin mediaquery--md() {
+  @media screen and (min-width: $screen-md) and (max-width: $screen-lg - 1) {
+    @content;
+  }
+}
+
+@mixin mediaquery--lg() {
+  @media screen and (min-width: $screen-lg) {
+    @content;
+  }
+}
+
+@mixin mediaquery--not-lg() {
+  @media screen and (max-width: $screen-lg - 1) {
+    @content;
   }
 }

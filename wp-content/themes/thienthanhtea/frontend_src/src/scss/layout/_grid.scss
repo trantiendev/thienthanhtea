@@ -1,37 +1,50 @@
 .row {
-  display: flex;
-  flex: 1 0 auto;
-  flex-wrap: wrap;
-  margin-left: -$col-gutter;
-  margin-right: -$col-gutter;
-}
+  margin-left: -$col-gutter/2;
+  margin-right: -$col-gutter/2;
 
-[class*='col-'] {
-  min-height: 1px;
-  max-width: 100%;
-  margin-bottom: 24px;
-  padding-left: $col-gutter;
-  padding-right: $col-gutter;
-}
-
-@for $i from 1 through $col-num {
-  .col-#{$i} {
-    width: percentage($i / $col-num);
+  @include mediaquery--sm() {
+    margin-left: -$col-gutter-sm/2;
+    margin-right: -$col-gutter-sm/2;
   }
 
-  .col-offset-#{$i} {
-    margin-left: percentage($i / $col-num);
+  &:after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+
+  .col {
+    float: left;
+    padding-left: $col-gutter/2;
+    padding-right: $col-gutter/2;
+
+    @include mediaquery--sm() {
+      padding-left: $col-gutter-sm/2;
+      padding-right: $col-gutter-sm/2;
+    }
   }
 }
 
-@include mediaquery--sm() {
+@include mediaquery--lg {
+  @for $i from 1 through $col-num {
+    .col-#{$i} {
+      width: percentage(($i / $col-num));
+    }
+
+    .col-offset-#{$i} {
+      margin-left: percentage(($i / $col-num));
+    }
+  }
+}
+
+@include mediaquery--md() {
   @for $i from 1 through $col-num {
     .col--md-#{$i} {
-      width: percentage($i / $col-num);
+      width: percentage(($i / $col-num));
     }
 
     .col--md-offset-#{$i} {
-      margin-left: percentage($i / $col-num);
+      margin-left: percentage(($i / $col-num));
     }
   }
 }
@@ -39,11 +52,11 @@
 @include mediaquery--sm() {
   @for $i from 1 through $col-num {
     .col--sm-#{$i} {
-      width: percentage($i / $col-num);
+      width: percentage(($i / $col-num));
     }
 
     .col--sm-offset-#{$i} {
-      margin-left: percentage($i / $col-num);
+      margin-left: percentage(($i / $col-num));
     }
   }
 }
