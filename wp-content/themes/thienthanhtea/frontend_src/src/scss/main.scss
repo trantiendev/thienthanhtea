@@ -15,14 +15,12 @@
 @import './layout/grid';
 
 // Modules
-@import './modules/typography';
+@import './modules/header';
 @import './modules/buttons';
-@import './modules/labels';
-@import './modules/form';
-@import './modules/card';
-@import './modules/table';
 @import './modules/link';
-@import './modules/list';
-@import './modules/dropdown';
+@import './modules/typography';
+@import './modules/input';
+@import './modules/card';
+@import './modules/headline';
 
 @import './modules/test';

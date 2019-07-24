@@ -1,0 +1,51 @@
+@mixin font-size-headline-lg() {
+  font-size: 24px;
+  // line-height: 45px;
+
+  // @include mediaquery--sm() {
+  //   font-size: 24px;
+  //   line-height: 32px;
+  // }
+}
+
+@mixin font-size-headline() {
+  // font-family: $font-family-regular;
+  font-size: 18px;
+  // line-height: 45px;
+
+  // @include mediaquery--sm() {
+  //   font-size: 20px;
+  //   line-height: 28px;
+  // }
+}
+
+// @mixin font-size-headline--default() {
+//   font-size: 20px;
+//   line-height: 28px;
+//
+//   @include mediaquery--sm() {
+//     font-size: 16px;
+//     line-height: 24px;
+//   }
+// }
+
+// @mixin font-size-headline--md() {
+//   font-family: $font-family-regular;
+//   font-size: 24px;
+//   line-height: 28px;
+//
+//   @include mediaquery--md() {
+//     font-size: 20px;
+//   }
+//
+//   @include mediaquery--sm() {
+//     font-size: 16px;
+//     line-height: 24px;
+//   }
+// }
+//
+// @mixin font-size-headline--sm() {
+//   font-family: $font-family-regular;
+//   font-size: 16px;
+//   line-height: 24px;
+// }
