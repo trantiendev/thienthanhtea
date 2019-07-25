@@ -1,0 +1,35 @@
+.footer {
+  .footer-global-nav {
+    padding-top: 80px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid $pink-color;
+  }
+
+  .footer-copyright {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .footer-nav,
+  .footer-social {
+    @include flexbox(flex-start, flex-start);
+  }
+
+  .footer-social {
+    p + p {
+      margin-left: 24px;
+    }
+  }
+
+  .footer-link-list {
+    .footer-link-list-item:first-child {
+      font-size: $font-size-sm;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+
+    + .footer-link-list {
+      margin-left: 40px;
+    }
+  }
+}
