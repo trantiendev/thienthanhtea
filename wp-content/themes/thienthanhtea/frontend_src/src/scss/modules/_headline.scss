@@ -1,0 +1,11 @@
+> [class^='headline'] {
+  font-weight: bold;
+}
+
+.headline-lg {
+  @include font-size-headline-lg();
+}
+
+.headline {
+  @include font-size-headline();
+}

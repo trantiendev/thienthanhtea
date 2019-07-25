@@ -1,0 +1,38 @@
+.header {
+  background-color: $light-color;
+  border-bottom: 1px dotted black;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.navbar {
+  @include flexbox(space-between, center);
+  padding: 24px 0;
+  position: relative;
+
+  &-brand {
+    @include x-centered();
+    width: 96px;
+    height: 96px;
+    background: lightblue;
+    border-radius: 50%;
+    top: 16px;
+  }
+
+  &-list {
+    @include flexbox(flex-start, flex-start);
+  }
+
+  &-list-item {
+    > a {
+      font-weight: bold;
+      font-size: $font-size-sm;
+    }
+
+    + .navbar-list-item {
+      margin-left: 24px;
+    }
+  }
+}
