@@ -11,3 +11,14 @@
     }
   }
 }
+
+.section-balance {
+  > [class^='container'] {
+    padding-bottom: 80px;
+    padding-top: 80px;
+  }
+}
+
+.section-gray {
+  background-color: $white-smoke-color;
+}

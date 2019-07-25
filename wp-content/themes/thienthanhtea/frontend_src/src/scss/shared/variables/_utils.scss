@@ -10,3 +10,24 @@ $radius-circle: 50% !default;
 
 // Letter spacing
 $body-spacing: .04rem !default;
+
+// Base
+.u-hidden {
+  display: none !important;
+}
+
+.u-text-sm {
+  font-size: $font-size-sm;
+}
+
+.u-text-bold  {
+  font-weight: bold;
+}
+
+.u-mb-16 {
+  margin-bottom: 16px;
+}
+
+.u-mt-16 {
+  margin-top: 16px;
+}

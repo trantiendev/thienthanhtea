@@ -1,8 +1,5 @@
 .card {
-  background-color: $light-color;
-
   &-image {
-    height: 320px;
     background-size: cover;
     background-position: center;
     display: block;
@@ -10,6 +7,10 @@
 
   &-content,
   &-price {
+    margin-top: 12px;
+  }
+
+  &-content + &-description {
     margin-top: 12px;
   }
 
@@ -27,23 +28,64 @@
     font-weight: normal;
   }
 
-  &.card-primary {
-    .card-headline {
-      margin-top: 24px;
+  &.card-primary,
+  &.card-secondary {
+    .card-image {
+      height: 320px;
     }
   }
 
-  &.card-secondary {
-    padding: 16px 16px 36px;
-    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .1);
+  &.card-primary {
+    .card-body {
+      padding-top: 24px;
+    }
+  }
 
-    .card-headline {
-      margin-top: 16px;
+  &.card-secondary,
+  &.card-quaternary {
+    padding-left: 16px;
+    padding-right: 16px;
+
+    .card-body {
+      padding-top: 16px;
     }
 
     .card-headline,
     .card-content {
       text-align: center;
+    }
+  }
+
+  &.card-secondary {
+    padding-top: 16px;
+    padding-bottom: 36px;
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .1);
+  }
+
+  &.card-tertiary {
+    @include flexbox(flex-start, flex-start);
+
+    .card-body {
+      padding: 24px;
+      width: 616px;
+      max-width: 100%;
+    }
+
+    .card-image {
+      width: 368px;
+      height: 160px;
+    }
+
+    + .card-tertiary {
+      margin-top: 32px;
+    }
+  }
+
+  &.card-quaternary {
+    .card-image {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto;
     }
   }
 }
