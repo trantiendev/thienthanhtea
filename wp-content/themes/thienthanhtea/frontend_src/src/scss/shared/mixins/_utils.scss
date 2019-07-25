@@ -34,3 +34,8 @@
     clear: both;
   }
 }
+
+@mixin bg-center() {
+  background-position: center;
+  background-size: cover;
+}

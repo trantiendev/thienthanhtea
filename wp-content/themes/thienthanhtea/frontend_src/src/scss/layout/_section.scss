@@ -1,13 +1,19 @@
 .section {
+  &-lg {
+    > [class^='container'] {
+      padding-bottom: 80px;
+    }
+  }
+
   &-sm {
     > [class^='container'] {
       padding-bottom: 32px;
     }
   }
 
-  &-lg {
+  &-xs {
     > [class^='container'] {
-      padding-bottom: 80px;
+      padding-bottom: 24px;
     }
   }
 }

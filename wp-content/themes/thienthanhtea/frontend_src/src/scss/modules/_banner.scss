@@ -1,0 +1,20 @@
+.banner {
+  background-color: $analogous-color;
+  padding: 24px 24px 32px;
+
+  &-title,
+  &-text,
+  &-price {
+    margin-bottom: 16px;
+  }
+
+  &-info {
+    color: $gray-color;
+    margin-bottom: 24px;
+    font-size: $font-size-sm;
+  }
+
+  &.banner-overlap {
+    margin-top: -82px;
+  }
+}

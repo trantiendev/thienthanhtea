@@ -1,7 +1,6 @@
 .card {
   &-image {
-    background-size: cover;
-    background-position: center;
+    @include bg-center();
     display: block;
   }
 
