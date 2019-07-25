@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "lodash": "^4.17.11",
-    "minimatch": "^3.0.2"
+    "minimatch": "^3.0.2",
+    "siema": "^1.5.1"
   }
 }
