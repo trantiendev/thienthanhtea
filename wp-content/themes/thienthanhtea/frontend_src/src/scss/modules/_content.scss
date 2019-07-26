@@ -1,0 +1,23 @@
+.content {
+  .content-title {
+    font-weight: bold;
+
+    &.content-title-sm {
+      font-size: $font-size-sm;
+      margin-bottom: 16px;
+    }
+
+    &.content-title-lg {
+      font-size: 18px;
+      margin-bottom: 24px;
+    }
+  }
+
+  .content-text + .content-text {
+    margin-top: 16px
+  }
+
+  .content-block + .content-block {
+    margin-top: 24px;
+  }
+}

@@ -5,3 +5,23 @@
     margin-left: 24px;
   }
 }
+
+.list-description {
+  .list-description-item {
+    @include flexbox(flex-start, flex-start);
+
+    + .list-description-item {
+      margin-top: 24px;
+    }
+  }
+
+  .list-description-label {
+    font-size: $font-size-sm;
+    font-weight: bold;
+    width: 200px;
+  }
+
+  .list-description-body {
+    width: calc(100% - 200px);
+  }
+}

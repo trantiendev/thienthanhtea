@@ -21,3 +21,13 @@ a {
   text-decoration: none;
   color: $dark-color;
 }
+
+.separator {
+  height: 1px;
+  background-color: $gainsboro-color;
+}
+
+.thumbnail {
+  @include bg-center();
+  height: 524px;
+}

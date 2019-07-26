@@ -1,0 +1,20 @@
+.post {
+  .post-image {
+    margin-bottom: 48px;
+  }
+
+  .post-thumbnail {
+    margin: 16px 0 36px;
+  }
+
+  .post-caption {
+    width: 468px;
+    max-width: 100%;
+    margin: 0 auto 24px;
+    color: $silver-color;
+  }
+
+  img {
+    vertical-align: middle;
+  }
+}
