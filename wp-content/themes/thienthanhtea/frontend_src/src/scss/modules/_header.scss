@@ -34,4 +34,18 @@
       margin-left: 24px;
     }
   }
+
+  &-dropdown {
+    position: absolute;
+    background-color: red;
+    width: 100vw;
+    margin-left:0;
+    display: flex;
+    justify-content: space-between;
+    height: 200px;
+
+    p:hover {
+      background-color: white;
+    }
+  }
 }
