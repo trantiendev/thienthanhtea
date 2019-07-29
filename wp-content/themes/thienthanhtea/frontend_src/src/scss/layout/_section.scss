@@ -5,6 +5,12 @@
     }
   }
 
+  &-md {
+    > [class^='container'] {
+      padding-bottom: 56px;
+    }
+  }
+
   &-sm {
     > [class^='container'] {
       padding-bottom: 32px;

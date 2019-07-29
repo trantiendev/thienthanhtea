@@ -7,5 +7,8 @@ window.addEventListener('DOMContentLoaded', function () {
   footer()
 
   const carouselHome = document.querySelector('#carousel-home')
-  if (carouselHome) new Carousel(carouselHome, { autoPlay: true }).init()
+  if (carouselHome) new Carousel(carouselHome, { autoPlay: true, dot: false }).init()
+
+  const carouselPost = document.querySelector('#carousel-post')
+  if (carouselPost) new Carousel(carouselPost, { autoPlay: false, dot: false }).init()
 })

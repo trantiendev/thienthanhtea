@@ -1,6 +1,10 @@
 .list-image {
   @include flexbox(flex-start, flex-start);
 
+  img {
+    vertical-align: middle;
+  }
+
   .list-image-item + .list-image-item {
     margin-left: 24px;
   }

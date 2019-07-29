@@ -8,10 +8,9 @@
 
 .navbar {
   @include flexbox(space-between, center);
-  padding: 24px 0;
   position: relative;
 
-  &-brand {
+  .navbar-brand {
     @include x-centered();
     width: 96px;
     height: 96px;
@@ -20,11 +19,14 @@
     top: 16px;
   }
 
-  &-list {
+  .navbar-list {
     @include flexbox(flex-start, flex-start);
   }
 
-  &-list-item {
+  .navbar-list-item {
+    padding-top: 32px;
+    padding-bottom: 32px;
+
     > a {
       font-weight: bold;
       font-size: $font-size-sm;
@@ -32,6 +34,24 @@
 
     + .navbar-list-item {
       margin-left: 24px;
+    }
+  }
+
+  .dropdown {
+    &:hover {
+      .dropdown-menu {
+        display: flex;
+      }
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: $light-color;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      display: none;
     }
   }
 }

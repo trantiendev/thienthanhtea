@@ -34,7 +34,9 @@ export default class Carousel {
       loop: true,
       perPage: this.config.perPage,
       onChange: () => {
-        this.activeDot()
+        if (this.config.dot) {
+          this.activeDot()
+        }
       }
     })
 
@@ -48,7 +50,11 @@ export default class Carousel {
     }
 
     // Render dot element
-    this.renderDots()
+    if (this.config.dot) {
+      this.renderDots()
+    }
+
+    this.renderThumbnails()
   }
 
   _bindings () {
@@ -110,6 +116,19 @@ export default class Carousel {
 
     // Assign carousel dots
     this.dots = Array.prototype.slice.call(this.carouselDots.querySelectorAll('span'))
+    if(!this.dots) return
+  }
+
+  renderThumbnails () {
+    const carouselThumbs = [...document.querySelectorAll('.list-image img')]
+    if(!carouselThumbs) return
+
+    carouselThumbs.forEach(btn => {
+      btn.addEventListener('click', ()=> {
+        this.siema.goTo(carouselThumbs.indexOf(btn))
+        this.resetAutoPlay()
+      })
+    })
   }
 
   renderDots () {
