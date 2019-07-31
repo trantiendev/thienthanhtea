@@ -5,15 +5,6 @@
   font-weight: $font-weight-normal;
   font-size: $font-size-base;
   line-height: $line-height-zero;
-  text-decoration: none;
-  text-align: center;
-  white-space: nowrap;
-  user-select: none;
-  touch-action: manipulation;
-  outline: none;
-  cursor: pointer;
-  transition: all .3s ease;
-  border: 0;
 
   &-primary {
     background-color: $red-color;
