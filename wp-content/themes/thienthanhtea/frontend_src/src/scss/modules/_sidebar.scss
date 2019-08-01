@@ -8,7 +8,7 @@
   &-body {
     background-color: $white-smoke-color;
     padding: 24px 16px;
-    height: 555px;
+    height: 556px;
   }
 
   &-lead,
@@ -42,8 +42,8 @@
     margin-top: 24px;
   }
 
-  &-overlap {
-    margin-top: -84px;
+  &.sidebar-overlap {
+    margin-top: -85px;
     position: relative;
   }
 }
