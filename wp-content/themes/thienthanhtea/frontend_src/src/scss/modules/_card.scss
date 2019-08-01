@@ -88,3 +88,7 @@
     }
   }
 }
+
+[class^='col'] + [class^='col']:nth-child(n + 5) .card-primary {
+  margin-top: 48px
+}

@@ -1,3 +1,13 @@
+@mixin font-size-headline-xl() {
+  font-size: 32px;
+  // line-height: 45px;
+
+  // @include mediaquery--sm() {
+  //   font-size: 24px;
+  //   line-height: 32px;
+  // }
+}
+
 @mixin font-size-headline-lg() {
   font-size: 24px;
   // line-height: 45px;

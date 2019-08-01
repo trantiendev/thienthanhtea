@@ -27,7 +27,23 @@ a {
   background-color: $gainsboro-color;
 }
 
-.thumbnail {
+.thumbnail,
+.category-hero {
   @include bg-center();
+}
+
+.thumbnail {
   height: 524px;
+}
+
+.category-hero {
+  height: 450px;
+}
+
+.page-title {
+  text-align: center;
+
+  .page-title-description {
+    margin-top: 16px;
+  }
 }

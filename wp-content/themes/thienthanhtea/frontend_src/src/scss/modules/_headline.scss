@@ -2,6 +2,10 @@
   font-weight: bold;
 }
 
+.headline-xl {
+  @include font-size-headline-xl();
+}
+
 .headline-lg {
   @include font-size-headline-lg();
 }

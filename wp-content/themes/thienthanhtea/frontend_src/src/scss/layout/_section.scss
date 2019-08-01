@@ -1,4 +1,10 @@
 .section {
+  &-xl {
+    > [class^='container'] {
+      padding-bottom: 150px;
+    }
+  }
+
   &-lg {
     > [class^='container'] {
       padding-bottom: 80px;
@@ -22,6 +28,18 @@
       padding-bottom: 24px;
     }
   }
+
+  &.has-padding-top-lg {
+    > [class^='container'] {
+      padding-top: 148px;
+    }
+  }
+
+  &.has-padding-top {
+    > [class^='container'] {
+      padding-top: 64px;
+    }
+  }
 }
 
 .section-balance {
@@ -31,6 +49,29 @@
   }
 }
 
+.section-headline {
+  text-align: center;
+
+  > [class^='container'] {
+    padding-bottom: 48px;
+  }
+}
+
 .section-gray {
   background-color: $white-smoke-color;
+}
+
+.section-video {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 25px;
+  height: 0;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
