@@ -1,0 +1,49 @@
+.sidebar {
+  &-header {
+    background-color: $light-salmon-color;
+    padding: 16px;
+    color: $light-color;
+  }
+
+  &-body {
+    background-color: $white-smoke-color;
+    padding: 24px 16px;
+    height: 555px;
+  }
+
+  &-lead,
+  .sidebar-list-item {
+    font-size: $font-size-sm;
+    line-height: 1.14;
+  }
+
+  &-lead {
+    font-weight: bold;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid $light-salmon-color;
+    display: block;
+  }
+
+  .sidebar-list {
+    @include flexbox(flex-start, flex-start);
+    flex-wrap: wrap;
+
+    .sidebar-list-item {
+      width: 50%;
+
+      &:nth-child(n + 3) {
+        margin-top: 14px;
+      }
+    }
+  }
+
+  .sidebar-block + .sidebar-block {
+    margin-top: 24px;
+  }
+
+  &-overlap {
+    margin-top: -84px;
+    position: relative;
+  }
+}
