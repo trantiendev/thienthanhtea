@@ -16,12 +16,8 @@
   border: 0;
 
   &-primary {
-    background-color: $red-color;
+    background-color: $light-salmon-color;
     color: $light-color;
     width: 100%;
-
-    &:hover {
-      background-color: darken($primary-color, 3%);
-    }
   }
 }

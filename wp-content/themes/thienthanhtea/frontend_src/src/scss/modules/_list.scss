@@ -29,3 +29,34 @@
     width: calc(100% - 200px);
   }
 }
+
+.list-infomation {
+  li {
+    background-size: 32px 32px;
+    background-position: left;
+    background-repeat: no-repeat;
+    padding: 4px 0 4px 48px;
+
+    @for $i from 1 through length($group-ico) {
+      &:nth-child(#{$i}) {
+        $j : nth($group-ico, $i);
+        background-image: url('../img/#{$j}.png');
+      }
+    }
+
+    + li {
+      margin-top: 16px;
+    }
+    // Test Func Scss
+    // @for $i from 1 through length($group-ico) {
+    //   &:nth-child(#{$i}) {
+    //     @each $iconsName in $group-ico{
+    //       $j : index($group-ico, $iconsName);
+    //       @if($j == $i) {
+    //         background-image: url('../img/#{$iconsName}.png');
+    //       }
+    //     }
+    //   }
+    // }
+  }
+}
