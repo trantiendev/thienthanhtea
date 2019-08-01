@@ -22,7 +22,6 @@
     @include y-centered();
     width: 56px;
     height: 56px;
-    background-color: $light-color;
     border: 0;
     padding: 0;
     cursor: pointer;
@@ -30,10 +29,12 @@
 
   .carousel-prev {
     left: 0;
+    background: $light-color url(../img/ico_arrow-left.png) center / 24px 24px no-repeat;
   }
 
   .carousel-next {
     right: 0;
+    background: $light-color url(../img/ico_arrow-right.png) center / 24px 24px no-repeat;
   }
 
   .carousel-dots {

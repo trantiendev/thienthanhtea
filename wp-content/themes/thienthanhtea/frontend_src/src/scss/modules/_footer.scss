@@ -16,8 +16,15 @@
   }
 
   .footer-social {
-    p + p {
-      margin-left: 24px;
+    a {
+      img {
+        width: 24px;
+        height: 24px;
+      }
+
+      + a {
+        margin-left: 24px;
+      }
     }
   }
 
