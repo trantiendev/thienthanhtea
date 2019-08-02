@@ -29,9 +29,9 @@
     }
   }
 
-  &.has-padding-top-lg {
+  &.has-no-padding {
     > [class^='container'] {
-      padding-top: 148px;
+      padding-bottom: 0;
     }
   }
 

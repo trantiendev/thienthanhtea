@@ -36,8 +36,13 @@ a {
   height: 524px;
 }
 
+.category-title,
 .category-hero {
-  height: 450px;
+  height: calc((100vh / 2) - 44px);
+}
+
+.category-title {
+  @include flexbox(flex-start, center);
 }
 
 .page-title {
