@@ -1,28 +1,33 @@
 .card {
-  &-image {
-    @include bg-center();
+  &:not(.card-quaternary) {
+    .card-image {
+      @include bg-center();
+    }
+  }
+
+  .card-image {
     display: block;
   }
 
-  &-content,
-  &-price {
+  .card-content,
+  .card-price {
     margin-top: 12px;
   }
 
-  &-content + &-description {
+  .card-content + .card-description {
     margin-top: 12px;
   }
 
-  &-price,
-  &-description {
+  .card-price,
+  .card-description {
     font-size: $font-size-sm;
   }
 
-  &-price {
+  .card-price {
     font-weight: bold;
   }
 
-  &-description {
+  .card-description {
     color: $gray-color;
     font-weight: normal;
   }
@@ -42,8 +47,7 @@
 
   &.card-secondary,
   &.card-quaternary {
-    padding-left: 16px;
-    padding-right: 16px;
+
 
     .card-body {
       padding-top: 16px;
@@ -56,8 +60,7 @@
   }
 
   &.card-secondary {
-    padding-top: 16px;
-    padding-bottom: 36px;
+    padding: 16px 16px 36px 16px;
     box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .1);
   }
 
@@ -82,8 +85,8 @@
 
   &.card-quaternary {
     .card-image {
-      width: 120px;
-      height: 120px;
+      width: 64px;
+      height: 64px;
       margin: 0 auto;
     }
   }
