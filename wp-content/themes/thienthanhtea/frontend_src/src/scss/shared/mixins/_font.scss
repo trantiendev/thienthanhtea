@@ -1,6 +1,8 @@
 @mixin font-size-headline-xl() {
   font-size: 32px;
-  // line-height: 45px;
+  line-height: 1.25;
+  letter-spacing: -0.48px;
+  font-family: $base-heading;
 
   // @include mediaquery--sm() {
   //   font-size: 24px;
@@ -10,7 +12,9 @@
 
 @mixin font-size-headline-lg() {
   font-size: 24px;
-  // line-height: 45px;
+  line-height: 1.33;
+  letter-spacing: -0.36;
+  font-family: $base-heading;
 
   // @include mediaquery--sm() {
   //   font-size: 24px;
@@ -19,14 +23,20 @@
 }
 
 @mixin font-size-headline() {
-  // font-family: $font-family-regular;
   font-size: 18px;
-  // line-height: 45px;
+  letter-spacing: -0.27px;
+  font-family: $base-heading;
 
   // @include mediaquery--sm() {
   //   font-size: 20px;
   //   line-height: 28px;
   // }
+}
+
+@mixin font-size-headline--sm() {
+  font-size: 14px;
+  letter-spacing: -0.21px;
+  font-family: $base-heading;
 }
 
 // @mixin font-size-headline--default() {
@@ -54,8 +64,3 @@
 //   }
 // }
 //
-// @mixin font-size-headline--sm() {
-//   font-family: $font-family-regular;
-//   font-size: 16px;
-//   line-height: 24px;
-// }
