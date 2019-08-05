@@ -12,11 +12,12 @@
 
   .navbar-brand {
     @include x-centered();
-    width: 96px;
-    height: 96px;
-    background: lightblue;
-    border-radius: 50%;
     top: 16px;
+
+    img {
+      width: 96px;
+      height: 96px;
+    }
   }
 
   .navbar-list {

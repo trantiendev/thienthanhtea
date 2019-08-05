@@ -2,7 +2,6 @@
   font-size: 32px;
   line-height: 1.25;
   letter-spacing: -0.48px;
-  font-family: $base-heading;
 
   // @include mediaquery--sm() {
   //   font-size: 24px;
@@ -14,7 +13,6 @@
   font-size: 24px;
   line-height: 1.33;
   letter-spacing: -0.36;
-  font-family: $base-heading;
 
   // @include mediaquery--sm() {
   //   font-size: 24px;
@@ -25,7 +23,6 @@
 @mixin font-size-headline() {
   font-size: 18px;
   letter-spacing: -0.27px;
-  font-family: $base-heading;
 
   // @include mediaquery--sm() {
   //   font-size: 20px;
@@ -36,7 +33,6 @@
 @mixin font-size-headline--sm() {
   font-size: 14px;
   letter-spacing: -0.21px;
-  font-family: $base-heading;
 }
 
 // @mixin font-size-headline--default() {
