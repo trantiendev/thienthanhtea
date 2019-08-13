@@ -3,6 +3,12 @@
 }
 
 .u-mobile-hidden {
+  @include mediaquery--sm() {
+    display: none !important;
+  }
+}
+
+.u-tablet-hidden {
   @include mediaquery--not-lg() {
     display: none !important;
   }

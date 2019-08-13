@@ -3,11 +3,16 @@
     padding-top: 80px;
     padding-bottom: 48px;
     border-bottom: 1px solid $pink-color;
+
+    .col--sm-12 + .col--sm-12 {
+      margin-top: 24px;
+    }
   }
 
   .footer-copyright {
     padding-top: 24px;
     padding-bottom: 24px;
+    text-align: center;
   }
 
   .footer-nav,
