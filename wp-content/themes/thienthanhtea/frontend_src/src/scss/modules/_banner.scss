@@ -2,6 +2,11 @@
   background-color: $analogous-color;
   padding: 24px 24px 32px;
 
+  @include mediaquery--sm() {
+    margin-left: -16px;
+    margin-right: -16px;
+  }
+
   &-title,
   &-text,
   &-price {
@@ -15,9 +20,13 @@
   }
 
   &.banner-overlap {
-    @include mediaquery--lg() {
+    @include mediaquery--not-sm() {
       margin-top: -280px;
       position: relative;
+    }
+
+    @include mediaquery--md() {
+      margin-top: -200px;
     }
   }
 }

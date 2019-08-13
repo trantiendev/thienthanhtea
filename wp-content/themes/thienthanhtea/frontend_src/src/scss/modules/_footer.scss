@@ -4,6 +4,11 @@
     padding-bottom: 48px;
     border-bottom: 1px solid $pink-color;
 
+    @include mediaquery--sm() {
+      padding-top: 32px;
+      padding-bottom: 40px;
+    }
+
     .col--sm-12 + .col--sm-12 {
       margin-top: 24px;
     }

@@ -2,12 +2,20 @@
   &-xl {
     > [class^='container'] {
       padding-bottom: 120px;
+
+      @include mediaquery--sm() {
+        padding-bottom: 56px;
+      }
     }
   }
 
   &-lg {
     > [class^='container'] {
       padding-bottom: 80px;
+
+      @include mediaquery--sm() {
+        padding-bottom: 44px;
+      }
     }
   }
 
@@ -46,6 +54,11 @@
   > [class^='container'] {
     padding-bottom: 80px;
     padding-top: 80px;
+
+    @include mediaquery--sm() {
+      padding-bottom: 24px;
+      padding-top: 24px;
+    }
   }
 }
 

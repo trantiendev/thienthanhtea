@@ -65,17 +65,32 @@
   }
 
   &.card-tertiary {
-    @include flexbox(flex-start, flex-start);
+    @include flexbox(flex-start, center);
+
+    @include mediaquery--sm() {
+      display: block;
+    }
 
     .card-body {
       padding: 24px;
       width: 616px;
       max-width: 100%;
+
+      @include mediaquery--sm() {
+        padding: 16px 0 0;
+      }
     }
 
     .card-image {
       width: 368px;
       height: 160px;
+    }
+
+    .card-body,
+    .card-image {
+      @include mediaquery--sm() {
+        width: 100%;
+      }
     }
 
     + .card-tertiary {
@@ -88,6 +103,11 @@
       width: 64px;
       height: 64px;
       margin: 0 auto;
+
+      @include mediaquery--sm() {
+        width: 40px;
+        height: 40px;
+      }
     }
   }
 }

@@ -31,6 +31,10 @@
 }
 
 .list-infomation {
+  @include mediaquery--sm() {
+    margin-bottom: 24px;
+  }
+
   li {
     background-size: 32px 32px;
     background-position: left;
