@@ -1,4 +1,6 @@
 .row {
+  display: flex;
+  flex-wrap: wrap;
   margin-left: -$col-gutter/2;
   margin-right: -$col-gutter/2;
 
@@ -7,14 +9,9 @@
     margin-right: -$col-gutter-sm/2;
   }
 
-  &:after {
-    clear: both;
-    content: '';
-    display: block;
-  }
-
   .col {
-    float: left;
+    min-height: 1px;
+    max-width: 100%;
     padding-left: $col-gutter/2;
     padding-right: $col-gutter/2;
 
