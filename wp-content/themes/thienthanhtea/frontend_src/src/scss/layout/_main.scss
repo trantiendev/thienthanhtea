@@ -1,3 +1,7 @@
 .main {
   padding-top: 88px;
+
+  @include mediaquery--sm() {
+    padding-top: 56px;
+  }
 }
