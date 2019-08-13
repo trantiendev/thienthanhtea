@@ -1,7 +1,7 @@
 export const header = () => {
-  const navbar = document.querySelector('.navbar')
-  const hamburger = navbar.querySelector('.navbar-collapse')
-  const dropDown = navbar.querySelector('.dropdown')
+  const navbar = document.querySelector('.js-navbar')
+  const hamburger = navbar.querySelector('.js-navbar-collapse')
+  const dropDown = navbar.querySelector('.js-dropdown')
 
   window.addEventListener('resize', onHandleClickMenu)
   onHandleClickMenu()
