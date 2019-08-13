@@ -1,5 +1,5 @@
 .section {
-  .section-xl {
+  &.section-xl {
     > [class^='container'] {
       padding-bottom: 120px;
 
@@ -9,7 +9,7 @@
     }
   }
 
-  .section-lg {
+  &.section-lg {
     > [class^='container'] {
       padding-bottom: 80px;
 
@@ -19,19 +19,19 @@
     }
   }
 
-  .section-md {
+  &.section-md {
     > [class^='container'] {
       padding-bottom: 56px;
     }
   }
 
-  .section-sm {
+  &.section-sm {
     > [class^='container'] {
       padding-bottom: 32px;
     }
   }
 
-  .section-xs {
+  &.section-xs {
     > [class^='container'] {
       padding-bottom: 24px;
     }
