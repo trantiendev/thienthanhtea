@@ -7,13 +7,13 @@
     margin-right: -16px;
   }
 
-  &-title,
-  &-text,
-  &-price {
+  .banner-title,
+  .banner-text,
+  .banner-price {
     margin-bottom: 16px;
   }
 
-  &-info {
+  .banner-info {
     color: $gray-color;
     margin-bottom: 24px;
     font-size: $font-size-sm;

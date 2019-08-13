@@ -16,7 +16,7 @@
 .form-input {
   @extend %form-control;
 
-  &-md {
+  .form-input-md {
     width: 253px;
   }
 
