@@ -7,7 +7,7 @@ export const header = () => {
   onHandleClickMenu()
 
   function onHandleClickMenu() {
-    window.innerWidth < 768 ? addEventClick() : removeEventClick()
+    window.innerWidth < 1200 ? addEventClick() : removeEventClick()
   }
 
   function addEventClick() {

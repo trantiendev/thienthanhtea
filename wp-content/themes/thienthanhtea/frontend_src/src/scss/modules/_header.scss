@@ -10,7 +10,7 @@
   @include flexbox(space-between, center);
   position: relative;
 
-  @include mediaquery--sm() {
+  @include mediaquery--not-lg() {
     height: 56px;
   }
 
@@ -30,7 +30,7 @@
     width: 20px;
     height: 20px;
 
-    @include mediaquery--sm() {
+    @include mediaquery--not-lg() {
       display: block;
     }
   }
@@ -39,7 +39,7 @@
     @include x-centered();
     top: 16px;
 
-    @include mediaquery--sm() {
+    @include mediaquery--not-lg() {
       top: 8px;
     }
 
@@ -47,7 +47,7 @@
       width: 96px;
       height: 96px;
 
-      @include mediaquery--sm() {
+      @include mediaquery--not-lg() {
         width: 56px;
         height: 56px;
       }
@@ -57,7 +57,7 @@
   .navbar-list {
     @include flexbox(flex-start, flex-start);
 
-    @include mediaquery--sm() {
+    @include mediaquery--not-lg() {
       background: $light-color;
       position: absolute;
       display: none;
@@ -81,7 +81,7 @@
       font-weight: bold;
       font-size: $font-size-sm;
 
-      @include mediaquery--sm() {
+      @include mediaquery--not-lg() {
         font-size: $font-size-lg;
       }
     }
@@ -91,21 +91,21 @@
         margin-left: 24px;
       }
 
-      @include mediaquery--sm() {
+      @include mediaquery--not-lg() {
         margin-top: 24px;
       }
     }
   }
-}
 
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
+  .navbar-search {
+    @include mediaquery--not-lg() {
+      position: relative;
+    }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
+    .navbar-search-btn {
+      @include mediaquery--lg {
+        display: none;
+      }
+    }
   }
 }

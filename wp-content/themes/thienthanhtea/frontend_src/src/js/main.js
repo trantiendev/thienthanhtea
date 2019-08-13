@@ -1,10 +1,12 @@
 import { header } from './header'
 import { footer } from './footer'
+import { onclickBtnSearch } from './common'
 import Carousel from './carousel'
 
 window.addEventListener('DOMContentLoaded', function () {
   header()
   footer()
+  onclickBtnSearch()
 
   const carouselHome = document.querySelector('#carousel-home')
   if (carouselHome) new Carousel(carouselHome, { autoPlay: true, dot: false }).init()

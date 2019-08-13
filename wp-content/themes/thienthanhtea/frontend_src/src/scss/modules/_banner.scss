@@ -15,7 +15,9 @@
   }
 
   &.banner-overlap {
-    margin-top: -280px;
-    position: relative;
+    @include mediaquery--lg() {
+      margin-top: -280px;
+      position: relative;
+    }
   }
 }

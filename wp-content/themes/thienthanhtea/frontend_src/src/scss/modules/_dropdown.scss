@@ -14,7 +14,7 @@
       margin-left: calc(-50vw + 50%);
     }
 
-    @include mediaquery--sm() {
+    @include mediaquery--not-lg() {
       position: relative;
       overflow-x: auto;
       justify-content: flex-start;
@@ -28,12 +28,12 @@
     width: calc(100% / 8);
     text-align: center;
 
-    @include mediaquery--sm() {
+    @include mediaquery--not-lg() {
       min-width: 112px;
     }
 
     + .dropdown-list {
-      @include mediaquery--sm() {
+      @include mediaquery--not-lg() {
         margin-left: 24px;
       }
     }

@@ -20,6 +20,12 @@
       padding-right: $col-gutter-sm/2;
     }
   }
+
+  &.row-reverse {
+    @include mediaquery--sm() {
+      flex-direction: column-reverse;
+    }
+  }
 }
 
 @include mediaquery--lg {

@@ -15,9 +15,16 @@
   transition: all .3s ease;
   border: 0;
 
-  &-primary {
+  &.btn-primary {
     background-color: $light-salmon-color;
     color: $light-color;
     width: 100%;
+  }
+
+  &.btn-search {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    background: url(../img/ico_search.png) center / 100% no-repeat;
   }
 }
