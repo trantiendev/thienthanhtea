@@ -1,0 +1,45 @@
+.u-hidden {
+  display: none !important;
+}
+
+.u-mobile-hidden {
+  @include mediaquery--not-lg() {
+    display: none !important;
+  }
+}
+
+.u-text-center {
+  text-align: center;
+}
+
+.u-text-sm {
+  font-size: $font-size-sm;
+}
+
+.u-text-bold  {
+  font-weight: bold;
+}
+
+.u-mb-16 {
+  margin-bottom: 16px;
+}
+
+.u-mb-24 {
+  margin-bottom: 16px;
+}
+
+.u-mt-16 {
+  margin-top: 16px;
+}
+
+.u-mt-24 {
+  margin-top: 24px;
+}
+
+.u-mt-40 {
+  margin-top: 40px;
+}
+
+.u-mt-56 {
+  margin-top: 56px;
+}

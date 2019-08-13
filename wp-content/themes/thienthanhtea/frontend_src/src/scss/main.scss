@@ -1,8 +1,8 @@
 @charset 'UTF-8';
 
 // Shared
-@import 'shared/variables';
 @import 'shared/mixins';
+@import 'shared/variables';
 
 // Base
 @import './base/base';
@@ -33,3 +33,4 @@
 @import './modules/sidebar';
 
 @import './modules/test';
+@import './base/utils';
