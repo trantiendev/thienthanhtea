@@ -35,4 +35,3 @@
     </div>
   </nav>
 </header>
-add plugin && refactor js && setup up header and footer php
