@@ -1,5 +1,5 @@
 <?php 
-/* Template Name: New Page */
+/* Template Name: News Page */
   get_header();
 ?>
 <div class="main">
