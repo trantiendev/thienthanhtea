@@ -181,7 +181,7 @@
   <section class="section section-lg">
     <div class="container container-full">
       <div class="section-video">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/61fTb0_UvVQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <?php the_field('home_video'); ?>
       </div>
     </div>
   </section>
