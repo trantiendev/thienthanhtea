@@ -16,6 +16,7 @@ function addjs() {
 add_action('wp_enqueue_scripts', 'addjs');
 
 add_theme_support('menus');
+add_theme_support('post-thumbnails');
 
 register_nav_menus(
   array(

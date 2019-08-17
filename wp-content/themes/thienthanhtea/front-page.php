@@ -4,9 +4,14 @@
     <div class="container container-full">
       <div id="carousel-home" class="carousel">
         <div class="carousel-items">
-          <a href="#"><img src="https://www.mezz.nl/assets/uploads/2018/12/edward-cisneros-411006-unsplash-1440x534-c-top.jpg" alt=""></a>
-          <a href="#"><img src="https://www.mezz.nl/assets/uploads/2018/12/edward-cisneros-411006-unsplash-1440x534-c-top.jpg" alt=""></a>
-          <a href="#"><img src="https://www.mezz.nl/assets/uploads/2018/12/edward-cisneros-411006-unsplash-1440x534-c-top.jpg" alt=""></a>
+          <?php if( have_rows('home_carousel') ): ?>
+          <?php while( have_rows('home_carousel') ): the_row();
+            $carousel_image = get_sub_field('home_carousel_image');
+            $carousel_link = get_sub_field('home_carousel_link');
+          ?>
+          <a href="<?php echo $carousel_link; ?>" target="_blank"><img src="<?php echo $carousel_image['url'] ?>" alt=""></a>
+          <?php endwhile; ?>
+          <?php endif; ?>
         </div>
         <button class="carousel-prev js-carousel-prev"></button>
         <button class="carousel-next js-carousel-next"></button>
