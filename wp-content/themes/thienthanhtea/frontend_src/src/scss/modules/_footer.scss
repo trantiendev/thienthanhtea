@@ -15,9 +15,21 @@
   }
 
   .footer-copyright {
+    @include font-size-body();
+    @include flexbox(space-between, center);
     padding-top: 24px;
     padding-bottom: 24px;
-    @include font-size-body();
+
+    @include mediaquery--sm() {
+      display: block;
+      text-align: center;
+    }
+
+    p {
+      @include mediaquery--sm() {
+        margin-bottom: 16px;
+      }
+    }
   }
 
   .footer-nav,
@@ -26,6 +38,11 @@
   }
 
   .footer-social {
+    @include mediaquery--sm() {
+      text-align: center;
+      display: inline-block;
+    }
+
     a {
       img {
         width: 24px;
