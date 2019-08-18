@@ -1,4 +1,8 @@
 .dropdown {
+  @include mediaquery--not-lg() {
+    background: url(../img/ico_plus.png) right center / 24px 24px no-repeat;
+  }
+
   .dropdown-menu {
     background: #eee url(../img/bg_menu.png) center / cover;
     justify-content: space-around;
@@ -65,6 +69,10 @@
   }
 
   &.is-active {
+    @include mediaquery--not-lg() {
+      background: url(../img/ico_minus.png) right 6px / 24px 24px no-repeat;
+    }
+
     .dropdown-menu {
       display: flex;
     }

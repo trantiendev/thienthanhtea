@@ -23,10 +23,18 @@
     font-size: $font-size-sm;
     font-weight: bold;
     width: 200px;
+
+    @include mediaquery--sm() {
+      width: 130px;
+    }
   }
 
   .list-description-body {
     width: calc(100% - 200px);
+
+    @include mediaquery--sm() {
+      width: calc(100% - 130px);
+    }
   }
 }
 

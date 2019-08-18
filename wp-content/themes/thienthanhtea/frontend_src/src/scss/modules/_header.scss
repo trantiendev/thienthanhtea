@@ -98,14 +98,6 @@
   }
 
   .navbar-search {
-    @include mediaquery--not-lg() {
-      position: relative;
-    }
-
-    .navbar-search-btn {
-      @include mediaquery--lg {
-        display: none;
-      }
-    }
+    position: relative;
   }
 }

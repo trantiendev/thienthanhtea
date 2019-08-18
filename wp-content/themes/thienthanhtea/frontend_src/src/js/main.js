@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', function () {
   onclickBtnSearch()
 
   const carouselHome = document.querySelector('#carousel-home')
-  if (carouselHome) new Carousel(carouselHome, { autoPlay: true, dot: false }).init()
+  if (carouselHome) new Carousel(carouselHome, { autoPlay: true }).init()
 
   const carouselPost = document.querySelector('#carousel-post')
   if (carouselPost) new Carousel(carouselPost, { autoPlay: false, dot: false }).init()

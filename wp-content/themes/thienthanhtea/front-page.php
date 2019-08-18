@@ -13,8 +13,9 @@
           <?php endwhile; ?>
           <?php endif; ?>
         </div>
-        <button class="carousel-prev js-carousel-prev"></button>
-        <button class="carousel-next js-carousel-next"></button>
+        <button class="carousel-prev js-carousel-prev u-hidden"></button>
+        <button class="carousel-next js-carousel-next u-hidden"></button>
+        <div class="carousel-dots"></div>
       </div>
     </div>
   </section>

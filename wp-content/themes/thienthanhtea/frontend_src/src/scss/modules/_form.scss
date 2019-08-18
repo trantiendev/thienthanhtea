@@ -1,19 +1,15 @@
 .form-search {
-  @include mediaquery--not-lg() {
-    position: absolute;
-    top: -50%;
-    right: 100%;
-    display: none;
-    background-color: $light-color;
-  }
+  position: absolute;
+  top: -50%;
+  right: 100%;
+  display: none;
+  background-color: $light-color;
 
   &.is-active {
-    @include mediaquery--not-lg() {
-      transform-origin: right;
-      opacity: 0;
-      display: block;
-      animation: scaleX .3s ease-in-out forwards;
-    }
+    transform-origin: right;
+    opacity: 0;
+    display: block;
+    animation: scaleX .3s ease-in-out forwards;
   }
 }
 

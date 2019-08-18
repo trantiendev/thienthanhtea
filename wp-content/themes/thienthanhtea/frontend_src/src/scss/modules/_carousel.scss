@@ -41,24 +41,24 @@
 
   .carousel-dots {
     @include x-centered();
-    top: 80%;
+    bottom: 24px;
     font-size: 0;
     z-index: 10;
 
     span {
-      width: 8px;
-      height: 8px;
+      width: 32px;
+      height: 4px;
       display: inline-block;
-      background-color: $light-color;
-      border-radius: 50%;
+      background-color: $gray-color;
+      border-radius: 4px;
       cursor: pointer;
 
       + span {
-        margin-left: 10px;
+        margin-left: 8px;
       }
 
       &.active {
-        background-color: $primary-color;
+        background-color: $light-color;
       }
     }
   }
