@@ -78,11 +78,11 @@
     }
 
     > a {
-      font-weight: bold;
-      font-size: $font-size-sm;
+      font-family: $base-heading;
+      @include font-size-headline--sm();
 
       @include mediaquery--not-lg() {
-        font-size: $font-size-lg;
+        @include font-size-headline-lg()
       }
     }
 

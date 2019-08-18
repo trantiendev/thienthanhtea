@@ -17,7 +17,7 @@
   .footer-copyright {
     padding-top: 24px;
     padding-bottom: 24px;
-    text-align: center;
+    @include font-size-body();
   }
 
   .footer-nav,
@@ -40,8 +40,7 @@
 
   .footer-link-list {
     .footer-link-list-item:first-child {
-      font-size: $font-size-sm;
-      font-weight: bold;
+      @include font-size-headline--sm();
       margin-bottom: 16px;
     }
 

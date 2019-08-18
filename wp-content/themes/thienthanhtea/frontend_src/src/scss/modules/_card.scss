@@ -18,13 +18,13 @@
     margin-top: 12px;
   }
 
-  .card-price,
-  .card-description {
-    font-size: $font-size-sm;
+  .card-content {
+    @include font-size-body();
   }
 
-  .card-price {
-    font-weight: bold;
+  .card-price,
+  .card-description {
+    @include font-size-headline--sm();
   }
 
   .card-description {
