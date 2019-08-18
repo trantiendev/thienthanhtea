@@ -11,14 +11,8 @@
     height: 556px;
   }
 
-  &-lead,
-  .sidebar-list-item {
-    font-size: $font-size-sm;
-    line-height: 1.14;
-  }
-
   &-lead {
-    font-weight: bold;
+    @include font-size-headline--sm();
     padding-bottom: 8px;
     margin-bottom: 8px;
     border-bottom: 1px solid $light-salmon-color;
@@ -31,9 +25,10 @@
 
     .sidebar-list-item {
       width: 50%;
+      @include font-size-body();
 
       &:nth-child(n + 3) {
-        margin-top: 14px;
+        margin-top: 8px;
       }
     }
   }

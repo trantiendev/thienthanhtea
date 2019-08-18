@@ -50,5 +50,6 @@ a {
 
   .page-title-description {
     margin-top: 16px;
+    @include font-size-body();
   }
 }

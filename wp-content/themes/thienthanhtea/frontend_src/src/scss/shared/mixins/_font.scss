@@ -2,61 +2,36 @@
   font-size: 32px;
   line-height: 1.25;
   letter-spacing: -0.48px;
+  font-weight: 700;
+  font-family: $base-heading;
 
-  // @include mediaquery--sm() {
-  //   font-size: 24px;
-  //   line-height: 32px;
-  // }
 }
 
 @mixin font-size-headline-lg() {
   font-size: 24px;
-  line-height: 1.33;
-  letter-spacing: -0.36;
-
-  // @include mediaquery--sm() {
-  //   font-size: 24px;
-  //   line-height: 32px;
-  // }
+  line-height: 1.33334;
+  letter-spacing: -0.36px;
+  font-weight: 700;
+  font-family: $base-heading;
 }
 
 @mixin font-size-headline() {
   font-size: 18px;
+  line-height: 1.33334;
   letter-spacing: -0.27px;
-
-  // @include mediaquery--sm() {
-  //   font-size: 20px;
-  //   line-height: 28px;
-  // }
+  font-weight: 700;
+  font-family: $base-heading;
 }
 
 @mixin font-size-headline--sm() {
   font-size: 14px;
-  letter-spacing: -0.21px;
+  line-height: 1.142;
+  font-weight: 700;
+  font-family: $base-heading;
 }
 
-// @mixin font-size-headline--default() {
-//   font-size: 20px;
-//   line-height: 28px;
-//
-//   @include mediaquery--sm() {
-//     font-size: 16px;
-//     line-height: 24px;
-//   }
-// }
-
-// @mixin font-size-headline--md() {
-//   font-family: $font-family-regular;
-//   font-size: 24px;
-//   line-height: 28px;
-//
-//   @include mediaquery--md() {
-//     font-size: 20px;
-//   }
-//
-//   @include mediaquery--sm() {
-//     font-size: 16px;
-//     line-height: 24px;
-//   }
-// }
-//
+@mixin font-size-body() {
+  font-size: 16px;
+  line-height: 1.38;
+  letter-spacing: 0;
+}
