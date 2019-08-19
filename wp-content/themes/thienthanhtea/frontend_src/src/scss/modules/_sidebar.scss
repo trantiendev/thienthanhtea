@@ -1,17 +1,17 @@
 .sidebar {
-  &-header {
+  .sidebar-header {
     background-color: $light-salmon-color;
     padding: 16px;
     color: $light-color;
   }
 
-  &-body {
+  .sidebar-body {
     background-color: $white-smoke-color;
     padding: 24px 16px;
     height: 556px;
   }
 
-  &-lead {
+  .sidebar-lead {
     @include font-size-headline--sm();
     padding-bottom: 8px;
     margin-bottom: 8px;
@@ -38,7 +38,7 @@
   }
 
   &.sidebar-overlap {
-    margin-top: -85px;
+    margin-top: -88px;
     position: relative;
   }
 }

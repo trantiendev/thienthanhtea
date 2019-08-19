@@ -55,6 +55,8 @@ export default class Carousel {
     }
 
     this.renderThumbnails()
+
+    this.onHandleDragging()
   }
 
   _bindings () {
@@ -142,6 +144,41 @@ export default class Carousel {
       dot.classList.remove('active')
     })
     this.dots[Math.abs(this.siema.currentSlide)].classList.add('active')
+  }
+
+  onHandleDragging() {
+    const carouselLinks = [...this.carouselItems.querySelectorAll('a')]
+    if(!carouselLinks) return
+
+    let dragging, href, el
+        dragging = false
+        href = ``
+
+    carouselLinks.forEach(carouselLink => {
+      carouselLink.addEventListener('mousedown', () => {
+        el = carouselLink
+        dragging = false
+        href = carouselLink.getAttribute('href')
+      })
+
+      carouselLink.addEventListener('mousemove', () => {
+        dragging = true
+      })
+
+      carouselLink.addEventListener('mouseup', () => {
+        let wasDragging
+        wasDragging = dragging
+        dragging = false
+
+        if (wasDragging) {
+          carouselLink.removeAttribute('href')
+
+          setTimeout((function() {
+            el.href = href
+          }), 10)
+        }
+      })
+    })
   }
 
   init () {
