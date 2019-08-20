@@ -122,11 +122,13 @@ export default class Carousel {
   }
 
   renderThumbnails () {
-    const carouselThumbs = [...document.querySelectorAll('.list-image img')]
+    const carouselThumbs = [...document.querySelectorAll('.list-image .list-image-item')]
     if(!carouselThumbs) return
 
     carouselThumbs.forEach(btn => {
-      btn.addEventListener('click', ()=> {
+      btn.addEventListener('click', (event)=> {
+        carouselThumbs.forEach(btn => {btn.classList.remove('active');})
+        event.currentTarget.classList.add('active');
         this.siema.goTo(carouselThumbs.indexOf(btn))
         this.resetAutoPlay()
       })
