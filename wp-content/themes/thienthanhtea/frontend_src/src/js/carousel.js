@@ -59,6 +59,8 @@ export default class Carousel {
     this.renderThumbnails()
 
     this.onHandleDragging()
+
+    this.activeThumbnails()
   }
 
   _bindings () {
@@ -127,6 +129,7 @@ export default class Carousel {
     const carouselThumbs = [...document.querySelectorAll('.list-image .list-image-item')]
     if(!carouselThumbs) return
 
+    carouselThumbs[0].classList.add('.is-active')
     carouselThumbs.forEach(btn => {
       btn.addEventListener('click', event => {
         carouselThumbs.forEach(btn => {btn.classList.remove('is-active');})
