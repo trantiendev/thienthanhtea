@@ -5,10 +5,27 @@
     vertical-align: middle;
   }
 
+  .list-image-item {
+    width: 112px;
+    background-size: cover;
+    display: block;
+
+    &:after {
+      content:'';
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    &.is-active {
+      outline: 5px solid $light-salmon-color;
+    }
+  }
+
   .list-image-item + .list-image-item {
     margin-left: 24px;
   }
 }
+
 
 .list-description {
   .list-description-item {

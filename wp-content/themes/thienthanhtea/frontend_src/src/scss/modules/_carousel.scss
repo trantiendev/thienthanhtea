@@ -4,7 +4,6 @@
 
   .carousel-img {
     display: block;
-    width: 100%;
     max-width: 100%;
     background-image: url('https://www.mezz.nl/assets/uploads/2018/12/edward-cisneros-411006-unsplash-1440x534-c-top.jpg');
     background-size: cover;
@@ -17,18 +16,6 @@
 
   .carousel-thumbnails {
     margin-top: 24px;
-  }
-
-  .list-image-item {
-    height: 112px;
-    flex: 1;
-    background-image: url('https://s3-us-west-2.amazonaws.com/uw-s3-cdn/wp-content/uploads/sites/6/2017/11/04133712/waterfall.jpg');
-    background-size: cover;
-    display: block;
-
-    &.active {
-      outline: 5px solid #ffa88c;
-    }
   }
 
   .carousel-prev,
