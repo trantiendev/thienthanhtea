@@ -54,9 +54,10 @@
             <div class="banner banner-overlap">
               <h3 class="banner-title headline-lg"><?php the_title(); ?></h3>
               <p class="banner-text"><?php echo wp_strip_all_tags(get_the_content()) ?></p>
-              <p class="banner-price headline">$ Price tag</p>
-              <p class="banner-info">Net weight (OZ)</p>
-              <button class="btn btn-primary">Mua không</button>
+              <?php $product_unit = get_field('product_unit');?>
+              <p class="banner-price headline"><?php echo $product_unit['product_unit_price']; ?></p>
+              <p class="banner-info">Net weight (<?php echo $product_unit['product_unit_weight']; ?>)</p>
+              <a href="<?php echo $product_unit['product_unit_link']; ?>" class="btn btn-primary" target="_blank">Mua không</a>
             </div>
             <h3 class="headline u-mb-24 u-mt-40">Recommend Brewing Method</h3>
             <div class="content">

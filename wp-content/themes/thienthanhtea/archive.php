@@ -33,7 +33,8 @@
             <div class="card-body">
               <h3 class="card-headline headline"><a href="<?php the_permalink(); ?>"><?php  the_title();?></a></h3>
               <p class="card-content"><?php echo wp_strip_all_tags(get_the_excerpt()) ?></p>
-              <p class="card-price">$ Price tag <span class="card-description">/ Net weight (OZ)</span></p>
+              <?php $product_unit = get_field('product_unit');?>
+              <p class="card-price"><?php echo $product_unit['product_unit_price']; ?><span class="card-separator"> / </span><span class="card-description">Net weight (<?php echo $product_unit['product_unit_weight']; ?>)</span></p>
             </div>
           </div>
         </div>

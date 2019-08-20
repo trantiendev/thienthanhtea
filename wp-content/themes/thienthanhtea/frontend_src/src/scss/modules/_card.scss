@@ -27,7 +27,8 @@
     @include font-size-headline--sm();
   }
 
-  .card-description {
+  .card-description,
+  .card-separator {
     color: $gray-color;
     font-weight: normal;
   }
@@ -47,8 +48,6 @@
 
   &.card-secondary,
   &.card-quaternary {
-
-
     .card-body {
       padding-top: 16px;
     }
