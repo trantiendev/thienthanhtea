@@ -4,8 +4,8 @@
   }
 
   .dropdown-menu {
-    background: #eee url(../img/bg_menu.png) center / cover;
-    justify-content: space-around;
+    background: $white-smoke-color url(../img/bg_menu.png) center / cover;
+    justify-content: flex-start;
     align-items: center;
     position: absolute;
     top: 100%;
@@ -70,7 +70,7 @@
 
   &.is-active {
     @include mediaquery--not-lg() {
-      background: url(../img/ico_minus.png) right 6px / 24px 24px no-repeat;
+      background: url(../img/ico_minus.png) right 4px / 24px 24px no-repeat;
     }
 
     .dropdown-menu {

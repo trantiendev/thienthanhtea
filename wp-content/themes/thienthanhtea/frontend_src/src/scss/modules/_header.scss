@@ -86,11 +86,13 @@
       }
     }
 
-    + .navbar-list-item {
+    &:not(:last-child) {
       @include mediaquery--lg() {
-        margin-left: 24px;
+        padding-right: 24px;
       }
+    }
 
+    + .navbar-list-item {
       @include mediaquery--not-lg() {
         margin-top: 24px;
       }
