@@ -1,12 +1,12 @@
 <?php 
-/* Template Name: Teas Page */
+/* Template Name: Teaware Page */
   get_header();
 ?>
 <div class="main">
   <section class="section section-lg has-padding-top">
     <div class="container">
       <div class="page-title">
-        <h1 class="headline-xl">Tea Categories</h1>
+        <h1 class="headline-xl">Teaware Categories</h1>
         <p class="page-title-description">Oolong Tea is attractive for its rich floral and fruity fragrance.<br> By visiting tea gardens.</p>
       </div>
     </div>
@@ -15,7 +15,7 @@
     <div class="container">
       <div class="row">
       <?php 
-          $parent = get_category_by_slug('teas');
+          $parent = get_category_by_slug('teaware');
           $categories = get_categories(array(
             'parent' => $parent->term_id,
           ));
