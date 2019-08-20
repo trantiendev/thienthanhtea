@@ -27,8 +27,7 @@
     @include font-size-headline--sm();
   }
 
-  .card-description,
-  .card-separator {
+  .card-description {
     color: $gray-color;
     font-weight: normal;
   }
