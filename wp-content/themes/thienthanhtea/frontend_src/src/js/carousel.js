@@ -32,6 +32,7 @@ export default class Carousel {
       duration: 500,
       easing: 'ease-in-out',
       loop: true,
+      draggable: true,
       perPage: this.config.perPage,
       onChange: () => {
         if (this.config.dot) {

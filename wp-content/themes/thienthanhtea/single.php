@@ -5,22 +5,26 @@
       <div class="container container-full">
         <div id="carousel-post" class="carousel">
           <div class="carousel-items">
-            <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/sansa-daenerys-game-of-thrones-finale-1558480613.jpg" alt="">
-            <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/sansa-daenerys-game-of-thrones-finale-1558480613.jpg" alt="">
-            <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/sansa-daenerys-game-of-thrones-finale-1558480613.jpg" alt="">
-            <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/sansa-daenerys-game-of-thrones-finale-1558480613.jpg" alt="">
-            <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/sansa-daenerys-game-of-thrones-finale-1558480613.jpg" alt="">
+            <?php if( have_rows('single_post_carousel') ): ?>
+              <?php while( have_rows('single_post_carousel') ): the_row();
+                $single_post_carousel_image = get_sub_field('single_post_carousel_image');
+              ?>
+              <div class="carousel-img" style="background-image: url(<?php echo $single_post_carousel_image['url'] ?>)"></div>
+              <?php endwhile; ?>
+            <?php endif; ?>
           </div>
           <div class="carousel-thumbnails">
             <div class="container">
               <div class="row">
                 <div class="col col-7 col--md-7 col--sm-12">
                   <ul class="list-image">
-                    <li class="list-image-item"><img src="http://www.mvaquatics.org/wp-content/uploads/2013/06/Penguin-115x115.jpeg" alt=""></li>
-                    <li class="list-image-item"><img src="http://www.mvaquatics.org/wp-content/uploads/2013/06/Goldfish-115x115.jpeg" alt=""></li>
-                    <li class="list-image-item"><img src="http://www.playmanija.lt/forumas/uploads/av-31500.jpg?_r=0" alt=""></li>
-                    <li class="list-image-item"><img src="https://upload.wikimedia.org/wikipedia/en/e/e5/NBATV_HWC_115x115.png" alt=""></li>
-                    <li class="list-image-item"><img src="http://muslimmedicine.net/wp-content/uploads/2012/09/angry-birds2-115x115.png" alt=""></li>
+                    <?php if( have_rows('single_post_carousel') ): ?>
+                      <?php while( have_rows('single_post_carousel') ): the_row();
+                        $single_post_carousel_image = get_sub_field('single_post_carousel_image');
+                      ?>
+                      <li class="list-image-item" style="background-image: url(<?php echo $single_post_carousel_image['url'] ?>)"></li>
+                      <?php endwhile; ?>
+                    <?php endif; ?>
                   </ul>
                 </div>
               </div>
@@ -64,19 +68,25 @@
               <div class="content-block">
                 <p class="content-title content-title-sm">Cup Method</p>
                 <ul class="list-infomation">
-                  <li>Teacup: 12oz / 355ml</li>
-                  <li>194℉ / 90℃</li>
-                  <li>2 Teaspoons / 3g Tea</li>
-                  <li>Brewing time: 2 - 5 mins</li>
+                  <?php if( have_rows('list_cup_method') ): ?>
+                    <?php while( have_rows('list_cup_method') ): the_row();
+                      $list_cup_method_text = get_sub_field('list_cup_method_text');
+                    ?>
+                    <li><?php echo $list_cup_method_text ?></li>
+                    <?php endwhile; ?>
+                  <?php endif; ?>
                 </ul>
               </div>
               <div class="content-block">
                 <p class="content-title content-title-sm">Chinese Gongfu Method</p>
                 <ul class="list-infomation">
-                  <li>Teacup: 12oz / 355ml</li>
-                  <li>194℉ / 90℃</li>
-                  <li>2 Teaspoons / 3g Tea</li>
-                  <li>Brewing time: 2 - 5 mins</li>
+                  <?php if( have_rows('list_chinese_gongfu_method') ): ?>
+                    <?php while( have_rows('list_chinese_gongfu_method') ): the_row();
+                      $list_chinese_gongfu_method_text = get_sub_field('list_chinese_gongfu_method_text');
+                    ?>
+                    <li><?php echo $list_chinese_gongfu_method_text ?></li>
+                    <?php endwhile; ?>
+                  <?php endif; ?>
                 </ul>
               </div>
             </div>

@@ -9,7 +9,7 @@
             $carousel_image = get_sub_field('home_carousel_image');
             $carousel_link = get_sub_field('home_carousel_link');
           ?>
-          <a href="<?php echo $carousel_link; ?>" target="_blank"><img src="<?php echo $carousel_image['url'] ?>" alt=""></a>
+          <a href="<?php echo $carousel_link; ?>" target="_blank" class="carousel-img" style="background-image: url(<?php echo $carousel_image['url'] ?>)"></a>
           <?php endwhile; ?>
           <?php endif; ?>
         </div>
