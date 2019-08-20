@@ -28,43 +28,45 @@
             <h3 class="sidebar-header headline">Category</h3>
             <div class="sidebar-body">
               <div class="sidebar-block">
-                <a href="#" class="sidebar-lead">Tea</a>
+                <a href="<?php echo home_url( '/teas/' ) ?>" class="sidebar-lead">Tea</a>
                 <ul class="sidebar-list">
-                  <li class="sidebar-list-item"><a href="#">Tra sua</a></li>
-                  <li class="sidebar-list-item"><a href="#">Tra sua</a></li>
-                  <li class="sidebar-list-item"><a href="#">Tra sua</a></li>
-                  <li class="sidebar-list-item"><a href="#">Tra sua</a></li>
-                  <li class="sidebar-list-item"><a href="#">Tra sua</a></li>
-                  <li class="sidebar-list-item"><a href="#">Tra sua</a></li>
-                  <li class="sidebar-list-item"><a href="#">Tra sua</a></li>
-                  <li class="sidebar-list-item"><a href="#">Tra sua</a></li>
+                  <?php 
+                    $parent = get_category_by_slug('teas');
+                    $categories = get_categories(array(
+                      'parent' => $parent->term_id,
+                    ));
+                    foreach($categories as $category) {
+                      echo '<li class="sidebar-list-item"><a href="'. get_category_link($category->term_id) .'">'. $category->name .'</a></li>';
+                    }
+                  ?>
                 </ul>
               </div>
               <div class="sidebar-block">
-                <a href="#" class="sidebar-lead">Tea</a>
+                <a href="<?php echo home_url( '/teaware/' ) ?>" class="sidebar-lead">Teaware</a>
                 <ul class="sidebar-list">
-                  <li class="sidebar-list-item"><a href="#">Tra sua</a></li>
-                  <li class="sidebar-list-item"><a href="#">Tra sua</a></li>
-                  <li class="sidebar-list-item"><a href="#">Tra sua</a></li>
-                  <li class="sidebar-list-item"><a href="#">Tra sua</a></li>
-                  <li class="sidebar-list-item"><a href="#">Tra sua</a></li>
-                  <li class="sidebar-list-item"><a href="#">Tra sua</a></li>
-                  <li class="sidebar-list-item"><a href="#">Tra sua</a></li>
-                  <li class="sidebar-list-item"><a href="#">Tra sua</a></li>
-                  <li class="sidebar-list-item"><a href="#">Tra sua</a></li>
+                  <?php 
+                    $parent = get_category_by_slug('teaware');
+                    $categories = get_categories(array(
+                      'parent' => $parent->term_id,
+                    ));
+                    foreach($categories as $category) {
+                      echo '<li class="sidebar-list-item"><a href="'. get_category_link($category->term_id) .'">'. $category->name .'</a></li>';
+                    }
+                  ?>
                 </ul>
               </div>
               <div class="sidebar-block">
-                <a href="#" class="sidebar-lead">Tea</a>
+                <a href="<?php echo home_url( '/gift/' ) ?>" class="sidebar-lead">Gift</a>
                 <ul class="sidebar-list">
-                  <li class="sidebar-list-item"><a href="#">Tra sua</a></li>
-                  <li class="sidebar-list-item"><a href="#">Tra sua</a></li>
-                  <li class="sidebar-list-item"><a href="#">Tra sua</a></li>
-                  <li class="sidebar-list-item"><a href="#">Tra sua</a></li>
-                  <li class="sidebar-list-item"><a href="#">Tra sua</a></li>
-                  <li class="sidebar-list-item"><a href="#">Tra sua</a></li>
-                  <li class="sidebar-list-item"><a href="#">Tra sua</a></li>
-                  <li class="sidebar-list-item"><a href="#">Tra sua</a></li>
+                  <?php 
+                    $parent = get_category_by_slug('gift');
+                    $categories = get_categories(array(
+                      'parent' => $parent->term_id,
+                    ));
+                    foreach($categories as $category) {
+                      echo '<li class="sidebar-list-item"><a href="'. get_category_link($category->term_id) .'">'. $category->name .'</a></li>';
+                    }
+                  ?>
                 </ul>
               </div>
             </div>
