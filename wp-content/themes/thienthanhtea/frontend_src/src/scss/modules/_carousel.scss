@@ -5,8 +5,8 @@
   .carousel-img {
     display: block;
     max-width: 100%;
-    background-image: url('https://www.mezz.nl/assets/uploads/2018/12/edward-cisneros-411006-unsplash-1440x534-c-top.jpg');
     background-size: cover;
+    background-position: center center;
     height: 560px;
 
     @include mediaquery--sm(){
