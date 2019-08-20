@@ -2,16 +2,15 @@
   position: relative;
   display: none;
 
-  .carousel-items {
-    a {
-      display: block;
-    }
+  .carousel-img {
+    display: block;
+    max-width: 100%;
+    background-size: cover;
+    background-position: center center;
+    height: 560px;
 
-    img {
-      width: 100%;
-      max-width: 100%;
-      height: auto;
-      vertical-align: middle;
+    @include mediaquery--sm(){
+      height: 320px;
     }
   }
 

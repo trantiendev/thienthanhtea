@@ -37,6 +37,7 @@ export default class Carousel {
         if (this.config.dot) {
           this.activeDot()
         }
+        this.activeThumbnails()
       }
     })
 
@@ -51,6 +52,7 @@ export default class Carousel {
 
     // Render dot element
     if (this.config.dot) {
+      console.log(this.config.dot)
       this.renderDots()
     }
 
@@ -122,16 +124,19 @@ export default class Carousel {
   }
 
   renderThumbnails () {
-    const carouselThumbs = [...document.querySelectorAll('.list-image img')]
+    const carouselThumbs = [...document.querySelectorAll('.list-image .list-image-item')]
     if(!carouselThumbs) return
 
     carouselThumbs.forEach(btn => {
-      btn.addEventListener('click', ()=> {
+      btn.addEventListener('click', event => {
+        carouselThumbs.forEach(btn => {btn.classList.remove('is-active');})
+        event.currentTarget.classList.add('is-active');
         this.siema.goTo(carouselThumbs.indexOf(btn))
         this.resetAutoPlay()
       })
     })
   }
+
 
   renderDots () {
     for (var i = 0; i < this.siema.innerElements.length; i++) {
@@ -144,6 +149,15 @@ export default class Carousel {
       dot.classList.remove('active')
     })
     this.dots[Math.abs(this.siema.currentSlide)].classList.add('active')
+  }
+
+  activeThumbnails() {
+    const carouselThumbs = [...document.querySelectorAll('.list-image .list-image-item')]
+    if(!carouselThumbs) return
+    carouselThumbs.forEach(slide => {
+      const addOrRemove = this.siema.currentSlide === carouselThumbs.indexOf(slide) ? 'add' : 'remove'
+      slide.classList[addOrRemove]('is-active')
+    })
   }
 
   onHandleDragging() {
