@@ -52,7 +52,6 @@ export default class Carousel {
 
     // Render dot element
     if (this.config.dot) {
-      console.log(this.config.dot)
       this.renderDots()
     }
 
@@ -129,7 +128,6 @@ export default class Carousel {
     const carouselThumbs = [...document.querySelectorAll('.list-image .list-image-item')]
     if(!carouselThumbs) return
 
-    carouselThumbs[0].classList.add('.is-active')
     carouselThumbs.forEach(btn => {
       btn.addEventListener('click', event => {
         carouselThumbs.forEach(btn => {btn.classList.remove('is-active');})
@@ -157,6 +155,7 @@ export default class Carousel {
   activeThumbnails() {
     const carouselThumbs = [...document.querySelectorAll('.list-image .list-image-item')]
     if(!carouselThumbs) return
+
     carouselThumbs.forEach(slide => {
       const addOrRemove = this.siema.currentSlide === carouselThumbs.indexOf(slide) ? 'add' : 'remove'
       slide.classList[addOrRemove]('is-active')
