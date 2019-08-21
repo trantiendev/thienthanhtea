@@ -3,28 +3,25 @@
   <?php if (have_posts()) : while(have_posts()) : the_post();?>
     <section class="section section-md">
       <div class="container container-full">
+      <?php if( have_rows('single_post_carousel') ): ?>
         <div id="carousel-post" class="carousel">
           <div class="carousel-items">
-            <?php if( have_rows('single_post_carousel') ): ?>
-              <?php while( have_rows('single_post_carousel') ): the_row();
-                $single_post_carousel_image = get_sub_field('single_post_carousel_image');
-              ?>
-              <div class="carousel-img" style="background-image: url(<?php echo $single_post_carousel_image['url'] ?>)"></div>
-              <?php endwhile; ?>
-            <?php endif; ?>
+            <?php while( have_rows('single_post_carousel') ): the_row();
+              $single_post_carousel_image = get_sub_field('single_post_carousel_image');
+            ?>
+            <div class="carousel-img" style="background-image: url(<?php echo $single_post_carousel_image['url'] ?>)"></div>
+            <?php endwhile; ?>
           </div>
           <div class="carousel-thumbnails">
             <div class="container">
               <div class="row">
                 <div class="col col-7 col--md-7 col--sm-12">
                   <ul class="list-image">
-                    <?php if( have_rows('single_post_carousel') ): ?>
-                      <?php while( have_rows('single_post_carousel') ): the_row();
-                        $single_post_carousel_image = get_sub_field('single_post_carousel_image');
-                      ?>
-                      <li class="list-image-item" style="background-image: url(<?php echo $single_post_carousel_image['url'] ?>)"></li>
-                      <?php endwhile; ?>
-                    <?php endif; ?>
+                    <?php while( have_rows('single_post_carousel') ): the_row();
+                      $single_post_carousel_image = get_sub_field('single_post_carousel_image');
+                    ?>
+                    <li class="list-image-item" style="background-image: url(<?php echo $single_post_carousel_image['url'] ?>)"></li>
+                    <?php endwhile; ?>
                   </ul>
                 </div>
               </div>
@@ -33,6 +30,7 @@
           <button class="carousel-prev js-carousel-prev u-hidden"><</button>
           <button class="carousel-next js-carousel-next u-hidden">></button>
         </div>
+        <?php endif; ?>
       </div>
     </section>
     <section class="section section-lg">
@@ -48,7 +46,7 @@
                 ?>
                 <li class="list-description-item">
                   <p class="list-description-label"><?php echo $list_description_label; ?></p>
-                  <p class="list-description-body"><?php echo $list_description_info ?></p>
+                  <p class="list-description-body"><?php echo $list_description_info; ?></p>
                 </li>
                 <?php endwhile; ?>
               <?php endif; ?>
@@ -84,7 +82,7 @@
                     <?php while( have_rows('list_chinese_gongfu_method') ): the_row();
                       $list_chinese_gongfu_method_text = get_sub_field('list_chinese_gongfu_method_text');
                     ?>
-                    <li><?php echo $list_chinese_gongfu_method_text ?></li>
+                    <li><?php echo $list_chinese_gongfu_method_text; ?></li>
                     <?php endwhile; ?>
                   <?php endif; ?>
                 </ul>
