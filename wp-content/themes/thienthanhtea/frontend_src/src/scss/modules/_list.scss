@@ -1,6 +1,16 @@
 .list-image {
   @include flexbox(flex-start, flex-start);
 
+  @include mediaquery--sm() {
+    align-items: center;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left:  16px;
+    overflow-x: scroll;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+  }
+
   img {
     vertical-align: middle;
   }
@@ -11,6 +21,10 @@
     background-position: center center;
     display: block;
 
+    @include mediaquery--sm() {
+      min-width: 64px;
+    }
+
     &:after {
       content:'';
       display: block;
@@ -18,7 +32,7 @@
     }
 
     &.is-active {
-      outline: 5px solid $light-salmon-color;
+      border: 5px solid $light-salmon-color;
     }
   }
 
