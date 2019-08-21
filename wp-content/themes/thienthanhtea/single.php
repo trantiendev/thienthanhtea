@@ -102,26 +102,51 @@
         <div class="row">
           <div class="col col-8 col-offset-2">
             <div class="post">
-              <img class="post-image" src="https://media.giphy.com/media/964zGz0ijfBqE/giphy.gif" alt="">
+              <?php if( have_rows('single_post_content_large') ): ?>
+              <?php while( have_rows('single_post_content_large') ): the_row();
+                $single_post_content_large_image = get_sub_field('single_post_content_large_image');
+                $single_post_content_large_title = get_sub_field('single_post_content_large_title');
+                $single_post_content_large_text = get_sub_field('single_post_content_large_text');
+              ?>
+              <?php if($single_post_content_large_image): ?>
+                <img class="post-image" src="<?php echo $single_post_content_large_image; ?>" alt="">
+              <?php endif;?>
+
+              <?php if($single_post_content_large_title || $single_post_content_large_text): ?>  
               <div class="row">
                 <div class="col col-10 col-offset-1">
                   <div class="content">
-                    <h3 class="content-title content-title-lg">一度に2つ以上のクラスを受講希望の場合は、併行履修の欄に2つ目のクラスをご入力ください。 満席等の理由により、</h3>
-                    <p class="content-text">あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら</p>
+                    <?php if($single_post_content_large_title): ?>
+                    <h3 class="content-title content-title-lg"><?php echo $single_post_content_large_title; ?></h3>
+                    <?php endif;?>
+                    <?php if($single_post_content_large_text): ?>
+                    <div class="content-text"><?php echo $single_post_content_large_text; ?></div>
+                    <?php endif;?>
                   </div>
                 </div>
               </div>
+              <?php endif;?>
+
+              <?php endwhile; ?>
+              <?php endif; ?>
+
+              <?php if( have_rows('single_post_content_small') ): ?>
+              <?php while( have_rows('single_post_content_small') ): the_row();
+                $single_post_content_small_image_1 = get_sub_field('single_post_content_small_image_1');
+                $single_post_content_small_image_2 = get_sub_field('single_post_content_small_image_2');
+                $single_post_content_small_caption = get_sub_field('single_post_content_small_caption');
+              ?>
               <div class="post-thumbnail">
                 <div class="row">
                   <div class="col col-6 col--md-6 col--sm-10 col--sm-offset-1">
-                    <img src="https://media1.giphy.com/media/ndeeQ7hss4WWI/source.gif" alt="">
+                    <img src="<?php echo $single_post_content_small_image_1; ?>" alt="">
                   </div>
                   <div class="col col-6 col--md-6 col--sm-10 col--sm-offset-1">
-                    <img src="https://media.giphy.com/media/vchPV7ckLrZ3W/giphy.gif" alt="">
+                    <img src="<?php echo $single_post_content_small_image_2; ?>" alt="">
                   </div>
                 </div>
               </div>
-              <p class="post-caption">サイマル・インターナショナルでは、学んだスキルを実際の通訳、翻訳の現場で実践いただく機会を提供することによって、受講生のキャリアアップを支援するを設けています。</p>
+              <p class="post-caption"><?php echo $single_post_content_small_caption; ?></p>
               <div class="row">
                 <div class="col col-10 col-offset-1">
                   <div class="content">
@@ -130,11 +155,14 @@
                   </div>
                 </div>
               </div>
+              <?php endwhile; ?>
+              <?php endif; ?>
             </div>
           </div>
         </div>
       </div>
     </section>
   <?php  endwhile; endif; ?>
+  <?php get_footer('sup');?>
 </div>
 <?php get_footer();?>
