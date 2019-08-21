@@ -112,7 +112,7 @@
                 <img class="post-image" src="<?php echo $single_post_content_large_image; ?>" alt="">
               <?php endif;?>
 
-              <?php if($single_post_content_large_title || $single_post_content_large_text): ?>  
+              <?php if($single_post_content_large_title || $single_post_content_large_text): ?>
               <div class="row">
                 <div class="col col-10 col-offset-1">
                   <div class="content">
@@ -135,26 +135,46 @@
                 $single_post_content_small_image_1 = get_sub_field('single_post_content_small_image_1');
                 $single_post_content_small_image_2 = get_sub_field('single_post_content_small_image_2');
                 $single_post_content_small_caption = get_sub_field('single_post_content_small_caption');
+                $single_post_content_small_title = get_sub_field('single_post_content_small_title');
+                $single_post_content_small_text = get_sub_field('single_post_content_small_text');
               ?>
+
+              <?php if($single_post_content_small_image_1 || $single_post_content_small_image_2): ?>
               <div class="post-thumbnail">
                 <div class="row">
                   <div class="col col-6 col--md-6 col--sm-10 col--sm-offset-1">
+                    <?php if($single_post_content_small_image_1): ?>
                     <img src="<?php echo $single_post_content_small_image_1; ?>" alt="">
+                    <?php endif;?>
                   </div>
                   <div class="col col-6 col--md-6 col--sm-10 col--sm-offset-1">
+                    <?php if($single_post_content_small_image_2): ?>
                     <img src="<?php echo $single_post_content_small_image_2; ?>" alt="">
+                    <?php endif;?>
                   </div>
                 </div>
               </div>
+              <?php endif;?>
+
+              <?php if($single_post_content_small_caption): ?>
               <p class="post-caption"><?php echo $single_post_content_small_caption; ?></p>
+              <?php endif;?>
+
+              <?php if($single_post_content_small_title || $single_post_content_small_text): ?>
               <div class="row">
                 <div class="col col-10 col-offset-1">
                   <div class="content">
-                    <p class="content-text">一橋大学経済学部卒業、上智大学大学院外国語学研究科修士課程卒業。東京銀行（現・三菱UFJ銀行）で資産運用業務、ドイツ銀行で証券保管業務、ステート･ストリート信託銀行で受託資産管理業務に従事。サイマル・アカデミー受講を経て実務翻訳者に転じた後、サイマル･インターナショナルのインハウス校閲・翻訳を担当。</p>
-                    <p class="content-text">併行履修の欄に2つ目のクラスをご入力ください。 満席等の理由により、ご希望のクラスにご案内できない場合もございます。 できるだけ、第2、第3希望もご入力ください。半角英数字で入力してください。 一度に2つ以上のクラスを受講希望の場合は、併行履修の欄に2つ目のクラスをご入力ください。 満席等の理由により、ご希望のクラスにご案内できない場合もございます。 できるだけ、第2、第3希望もご入力ください。半角英数字で入力してください。 一度に2つ以上のクラスを受講希望の場合は、</p>
+                    <?php if($single_post_content_small_title): ?>
+                    <h3 class="content-title content-title-lg"><?php echo $single_post_content_small_title; ?></h3>
+                    <?php endif;?>
+                    <?php if($single_post_content_small_text): ?>
+                    <div class="content-text"><?php echo $single_post_content_small_text; ?></div>
+                    <?php endif;?>
                   </div>
                 </div>
               </div>
+              <?php endif; ?>
+
               <?php endwhile; ?>
               <?php endif; ?>
             </div>
