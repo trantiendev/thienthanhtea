@@ -1,4 +1,4 @@
-<?php 
+<?php
 /* Template Name: News Page */
   get_header();
 ?>
@@ -13,38 +13,27 @@
   </section>
   <section class="section section-lg">
     <div class="container">
+      <?php
+        $args = array(
+          'post_type' => 'post',
+          'category_name' => 'news'
+        );
+        $_posts = new WP_Query($args);
+      ?>
+      <?php if($_posts->have_posts()): ?>
+        <?php while($_posts->have_posts()) : $_posts->the_post();?>
       <div class="card card-tertiary">
-        <a href="post-new.html" class="card-image" style="background-image: url('https://i.ytimg.com/vi/Yj7ja6BANLM/maxresdefault.jpg')"></a>
+        <?php if(has_post_thumbnail()): ?>
+        <a href="<?php the_permalink();?>" class="card-image" style="background-image: url(<?php the_post_thumbnail_url('product_image_small'); ?>)"></a>
+        <?php endif;?>
         <div class="card-body">
-          <h3 class="card-headline headline"><a href="#">How to drink Tea</a></h3>
-          <p class="card-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <p class="card-description">19 May 2017</p>
+          <h3 class="card-headline headline"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
+          <p class="card-content"><?php echo wp_strip_all_tags(get_the_excerpt()) ?></p>
+          <p class="card-description"><?php echo get_the_date(get_option('date_format')); ?></p>
         </div>
       </div>
-      <div class="card card-tertiary">
-        <a href="#" class="card-image" style="background-image: url('https://i.ytimg.com/vi/Yj7ja6BANLM/maxresdefault.jpg')"></a>
-        <div class="card-body">
-          <h3 class="card-headline headline"><a href="#">How to drink Tea</a></h3>
-          <p class="card-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <p class="card-description">19 May 2017</p>
-        </div>
-      </div>
-      <div class="card card-tertiary">
-        <a href="#" class="card-image" style="background-image: url('https://i.ytimg.com/vi/Yj7ja6BANLM/maxresdefault.jpg')"></a>
-        <div class="card-body">
-          <h3 class="card-headline headline"><a href="#">How to drink Tea</a></h3>
-          <p class="card-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <p class="card-description">19 May 2017</p>
-        </div>
-      </div>
-      <div class="card card-tertiary">
-        <a href="#" class="card-image" style="background-image: url('https://i.ytimg.com/vi/Yj7ja6BANLM/maxresdefault.jpg')"></a>
-        <div class="card-body">
-          <h3 class="card-headline headline"><a href="#">How to drink Tea</a></h3>
-          <p class="card-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <p class="card-description">19 May 2017</p>
-        </div>
-      </div>
+      <?php endwhile; ?>
+      <?php endif;?>
     </div>
   </section>
   <?php get_footer('sup'); ?>

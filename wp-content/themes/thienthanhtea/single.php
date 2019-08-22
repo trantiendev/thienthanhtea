@@ -1,6 +1,7 @@
 <?php get_header();?>
 <div class="main">
   <?php if (have_posts()) : while(have_posts()) : the_post();?>
+    <?php if ( !in_category( array(28) ) ) : ?>
     <section class="section section-md">
       <div class="container container-full">
       <?php if( have_rows('single_post_carousel') ): ?>
@@ -97,7 +98,8 @@
         <div class="separator"></div>
       </div>
     </section>
-    <section class="section section-lg">
+    <?php endif; ?>
+    <section class="section section-lg <?php if (in_category(array(28))) echo('has-padding-top') ?>">
       <div class="container">
         <div class="row">
           <div class="col col-8 col-offset-2">

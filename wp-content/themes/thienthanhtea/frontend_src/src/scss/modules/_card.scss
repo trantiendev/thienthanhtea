@@ -63,14 +63,14 @@
   }
 
   &.card-tertiary {
-    @include flexbox(flex-start, center);
+    @include flexbox(flex-start, flex-start);
 
     @include mediaquery--sm() {
       display: block;
     }
 
     .card-body {
-      padding: 24px;
+      padding-left: 24px;
       width: 616px;
       max-width: 100%;
 
