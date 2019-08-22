@@ -24,7 +24,7 @@
         <?php while($_posts->have_posts()) : $_posts->the_post();?>
       <div class="card card-tertiary">
         <?php if(has_post_thumbnail()): ?>
-        <a href="<?php the_permalink();?>" class="card-image" style="background-image: url(<?php the_post_thumbnail_url('product_image_small'); ?>)"></a>
+        <a href="<?php the_permalink();?>" class="card-image" style="background-image: url(<?php the_post_thumbnail_url(); ?>)"></a>
         <?php endif;?>
         <div class="card-body">
           <h3 class="card-headline headline"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
@@ -32,7 +32,7 @@
           <p class="card-description"><?php echo get_the_date(get_option('date_format')); ?></p>
         </div>
       </div>
-      <?php endwhile; ?>
+        <?php endwhile; ?>
       <?php endif;?>
     </div>
   </section>
