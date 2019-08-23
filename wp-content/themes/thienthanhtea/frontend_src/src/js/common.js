@@ -1,10 +1,12 @@
 export const onclickBtnSearch = () => {
   const navbarSearch = document.querySelector('.js-navbar-search')
+  const navbarSearchBtn = document.querySelector('.js-btn-seach')
   if(!navbarSearch) return
 
   const formSearch = navbarSearch.querySelector('.js-form-search')
 
-  navbarSearch.querySelector('.js-btn-seach').addEventListener('click', () => {
+  navbarSearchBtn.addEventListener('click', () => {
+    navbarSearchBtn.classList.toggle('is-active')
     formSearch.classList.toggle('is-active')
   })
 

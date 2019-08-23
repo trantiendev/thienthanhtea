@@ -26,5 +26,9 @@
     height: 20px;
     padding: 0;
     background: url(../img/ico_search.png) center / 100% no-repeat;
+
+    &.is-active {
+      background: url(../img/ico_close.png) center / 100% no-repeat;
+    }
   }
 }

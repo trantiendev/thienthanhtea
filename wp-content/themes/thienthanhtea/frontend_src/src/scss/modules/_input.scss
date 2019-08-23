@@ -17,10 +17,21 @@
   @extend %form-control;
 
   &.form-input-md {
-    width: 253px;
+    width: 250px;
+
+    @include mediaquery--not-lg() {
+      width: calc(100vw - 36px);
+    }
   }
 
   &.search-box {
     padding-right: 24px;
+
+    @include mediaquery--not-lg() {
+      padding-left: 24px;
+      height: 56px;
+      border: 0;
+    }
+
   }
 }

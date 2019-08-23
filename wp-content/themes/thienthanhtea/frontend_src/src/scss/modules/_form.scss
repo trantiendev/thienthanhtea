@@ -1,9 +1,13 @@
 .form-search {
   position: absolute;
-  top: -50%;
+  top: -8px;
   right: 100%;
   display: none;
   background-color: $light-color;
+
+  @include mediaquery--not-lg() {
+    top: -16px;
+  }
 
   &.is-active {
     transform-origin: right;
