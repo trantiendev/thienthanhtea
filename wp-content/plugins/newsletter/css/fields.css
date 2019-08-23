@@ -1,0 +1,102 @@
+/* DEBUG - Disable when done */
+/*.tnp-field {*/
+   /*border: 1px dashed #999;*/
+/*}*/
+
+.tnp-section {
+    
+}
+
+/* Labels */
+
+.tnp-label {
+    /* margin: 5px; */
+    /* text-align: center; */
+    color: #868686;
+    /* margin-bottom: 20px; */
+    font-family: Circular Std, sans-serif;
+    font-weight: 300;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
+}
+
+.tnp-field.tnp-separator {
+    border-top: 1px solid #ddd;
+    line-height: 0;
+}
+
+/* Single field/row container */
+.tnp-field {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.tnp-field label.tnp-label {
+    display: block;
+    font-size: 12px;
+    color: #868686;
+    font-family: "Circular Std", sans-serif;
+    font-weight: 300;
+    border-bottom: 1px solid #fff;
+    margin: 30px 0px 10px 0px;
+}
+
+.tnp-field.tnp-checkbox label {
+    display: inline;
+}
+
+/* Set of inlined field for font, size, color... */
+tnp-field.tnp-font {
+    
+}
+
+.tnp-field input {
+    width: 100%;
+}
+
+.tnp-field.tnp-size input {
+    width: 60px;
+    display: inline;
+}
+
+.tnp-field .tnp-padding-fields {
+    display: inline;
+}
+
+/* Four field for block padding selection */
+.tnp-field .tnp-padding-fields input {
+    width: 40px;
+    display: inline;
+}
+
+.tnp-field select {
+    width: auto!important;
+    color: #34495E;
+}
+
+.tnp-field input[type=url] {
+    font-family: monospace;
+}
+
+.tnp-field input[type=color] {
+    width: 40px;
+    height: 27px;
+}
+
+.tnp-field input[type=submit] {
+    width: auto;
+}
+
+.tnp-field input[type=checkbox] {
+    width: auto;
+}
+
+.tnp-field.tnp-categories {
+    
+}
+
+/* The label for each category checkbox (should override the generic label appearance) */
+.tnp-field.tnp-categories label {
+    
+}

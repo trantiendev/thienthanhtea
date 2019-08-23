@@ -1,0 +1,11 @@
+.header-logo {
+    text-align: center!important;
+}
+@media all and (max-width: 640) {
+    .header-table td {
+        width: 100%!important;
+    }
+    .header-logo {
+        text-align: center!important;
+    }
+}

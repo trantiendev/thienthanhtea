@@ -1,0 +1,10 @@
+@media all and (max-width: 525px) {
+    .hero-table {
+        width: 100%!important;
+        max-width: 100%!important;
+    }
+
+    .hero-table-right {
+        margin-top: 20px;
+    }
+}
