@@ -3,6 +3,10 @@
   font-family: $base-heading;
 }
 
+.headline-xxl {
+  @include font-size-headline-xxl();
+}
+
 .headline-xl {
   @include font-size-headline-xl();
 }
