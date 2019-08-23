@@ -16,7 +16,7 @@
         wp_title(''); echo ' - ';}
     elseif (is_404()) {
         echo 'Not Found - '; }
-        
+
     if (is_home()) {
         bloginfo('name'); echo ' - '; bloginfo('description');
     } else {
@@ -48,9 +48,7 @@
       <a href="<?php echo get_option("siteurl"); ?>" class="navbar-brand"><img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/ico_logo.png" alt=""></a>
       <div class="navbar-search js-navbar-search">
         <button class="btn btn-search navbar-search-btn js-btn-seach"></button>
-        <form class="form-search js-form-search">
-          <input class="form-input form-input-md search-box" type="text" placeholder="Search">
-        </form>
+        <?php get_search_form(); ?>
       </div>
     </div>
   </nav>

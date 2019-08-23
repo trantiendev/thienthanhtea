@@ -1,13 +1,13 @@
 <?php
 	// Add RSS links to <head> section
   automatic_feed_links();
-  
+
 	// Clean up the <head>
 	function removeHeadLinks() {
     remove_action('wp_head', 'rsd_link');
     remove_action('wp_head', 'wlwmanifest_link');
   }
-  
+
   add_action('init', 'removeHeadLinks');
   remove_action('wp_head', 'wp_generator');
 
@@ -28,6 +28,7 @@ add_action('wp_enqueue_scripts', 'addjs');
 
 add_theme_support('menus');
 add_theme_support('post-thumbnails');
+add_theme_support('html5',array('search-form'));
 
 // Excerpt length
 function new_excerpt_length($length) {
