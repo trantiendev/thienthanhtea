@@ -3,12 +3,17 @@
   font-family: $base-heading;
 }
 
+.headline-xxl,
+.headline-xl {
+  @include font-size-headline-xl();
+}
+
 .headline-xxl {
-  @include font-size-headline-xxl();
+  font-size: 72px;
 }
 
 .headline-xl {
-  @include font-size-headline-xl();
+  font-size: 32px;
 }
 
 .headline-lg {
