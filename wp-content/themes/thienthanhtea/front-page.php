@@ -87,7 +87,7 @@
 
   <section class="section-headline">
     <div class="container">
-      <h2 class="headline-lg">Features</h2>
+      <h2 class="headline-lg">New Features</h2>
     </div>
   </section>
   <section class="section section-lg">
@@ -96,7 +96,7 @@
         <?php
           $args = array(
             'post_type' => 'post',
-            'category_name' => 'features'
+            'category_name' => 'new feature'
           );
           $_posts = new WP_Query($args);
         ?>
