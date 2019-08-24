@@ -4,9 +4,11 @@
         <div class="row">
           <div class="col col-3 col--md-3 col--sm-12">
             <p class="u-text-sm u-text-bold u-mb-16">Subcribe to get exclusive<br> promotions, news, from<br> Thienthanhtea</p>
-            <form class="form form-subcribe">
-              <input class="form-input" type="text" placeholder="Your email goes here">
-              <button class="btn btn-primary u-mt-16">Subcribe</button>
+            <form class="form form-subcribe" method="post" action="http://localhost/thienthanhtea/?na=s" onsubmit="return newsletter_check(this)">
+              <input type="hidden" name="nlang" value="">
+              <div class="tnp-field tnp-field-email"><input class="tnp-email form-input" placeholder="Your email goes here" type="email" name="ne" required></div>
+              <div class="tnp-field tnp-field-button"><input class="btn btn-primary u-mt-16" type="submit" value="Subscribe" >
+              </div>
             </form>
           </div>
           <div class="col col-5 col-offset-1 col--md-offset-1 col--md-5 col--sm-12">

@@ -96,7 +96,8 @@
         <?php
           $args = array(
             'post_type' => 'post',
-            'category_name' => 'new feature'
+            'category_name' => 'new feature',
+            'posts_per_page' => 8,
           );
           $_posts = new WP_Query($args);
         ?>

@@ -1,6 +1,10 @@
 [class*='headline'] {
   font-weight: bold;
   font-family: $base-heading;
+
+  &.is-accident > p {
+    @include font-size-headline-xl();
+  }
 }
 
 .headline-xl {
