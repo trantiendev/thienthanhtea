@@ -45,7 +45,7 @@
         )
       );
     ?>
-      <a href="<?php echo get_option("siteurl"); ?>" class="navbar-brand"><img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/ico_logo.png" alt=""></a>
+      <a href="<?php echo get_option("siteurl"); ?>" class="navbar-brand"><img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/ico_logo.png" alt="ico logo"></a>
       <div class="navbar-search js-navbar-search">
         <button class="btn btn-search navbar-search-btn js-btn-seach"></button>
         <?php get_search_form(); ?>

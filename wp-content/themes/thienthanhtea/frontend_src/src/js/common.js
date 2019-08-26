@@ -13,5 +13,6 @@ export const onclickBtnSearch = () => {
   document.addEventListener('click', event => {
     if (navbarSearch.contains(event.target) || event.target.className === 'js-form-search') return
     formSearch.classList.remove('is-active')
+    navbarSearchBtn.classList.remove('is-active')
   })
 }

@@ -111,7 +111,7 @@
                 $single_post_content_large_text = get_sub_field('single_post_content_large_text');
               ?>
               <?php if($single_post_content_large_image): ?>
-                <img class="post-image" src="<?php echo $single_post_content_large_image; ?>" alt="">
+                <img class="post-image" src="<?php echo $single_post_content_large_image; ?>" alt="postimage">
               <?php endif;?>
 
               <?php if($single_post_content_large_title || $single_post_content_large_text): ?>
@@ -146,12 +146,12 @@
                 <div class="row">
                   <div class="col col-6 col--md-6 col--sm-10 col--sm-offset-1">
                     <?php if($single_post_content_small_image_1): ?>
-                    <img src="<?php echo $single_post_content_small_image_1; ?>" alt="">
+                    <img src="<?php echo $single_post_content_small_image_1; ?>" alt="postimage">
                     <?php endif;?>
                   </div>
                   <div class="col col-6 col--md-6 col--sm-10 col--sm-offset-1">
                     <?php if($single_post_content_small_image_2): ?>
-                    <img src="<?php echo $single_post_content_small_image_2; ?>" alt="">
+                    <img src="<?php echo $single_post_content_small_image_2; ?>" alt="postimage">
                     <?php endif;?>
                   </div>
                 </div>
