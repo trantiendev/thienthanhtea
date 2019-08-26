@@ -19,4 +19,4 @@ Thumbs.db
 
 ## public file
 /public/*
-/public/!img
+!/public/img
