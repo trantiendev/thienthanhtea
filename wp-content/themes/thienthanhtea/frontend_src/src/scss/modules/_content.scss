@@ -1,6 +1,10 @@
 .content {
+  max-width: 680px;
+  margin: 0 auto;
+
   .content-title {
     font-weight: bold;
+    font-family: $base-heading;
 
     &.content-title-sm {
       font-size: $font-size-sm;
@@ -8,8 +12,13 @@
     }
 
     &.content-title-lg {
-      font-size: 18px;
+      @include font-size-headline-lg;
       margin-bottom: 24px;
+    }
+
+    &.content-title-xl {
+      @include font-size-headline-xl;
+      text-align: center;
     }
   }
 

@@ -116,7 +116,7 @@
 
               <?php if($single_post_content_large_title || $single_post_content_large_text): ?>
               <div class="row">
-                <div class="col col-10 col-offset-1">
+                <div class="col col-10 col-offset-1 col--md-10 col--md-offset-1">
                   <div class="content">
                     <?php if($single_post_content_large_title): ?>
                     <h3 class="content-title content-title-lg"><?php echo $single_post_content_large_title; ?></h3>
@@ -164,7 +164,7 @@
 
               <?php if($single_post_content_small_title || $single_post_content_small_text): ?>
               <div class="row">
-                <div class="col col-10 col-offset-1">
+                <div class="col col-10 col-offset-1 col--md-10 col--md-offset-1">
                   <div class="content">
                     <?php if($single_post_content_small_title): ?>
                     <h3 class="content-title content-title-lg"><?php echo $single_post_content_small_title; ?></h3>

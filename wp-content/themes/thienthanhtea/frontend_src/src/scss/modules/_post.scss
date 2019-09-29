@@ -8,10 +8,12 @@
   }
 
   .post-thumbnail {
-    margin-bottom: 36px;
+    margin-bottom: 40px;
 
-    img {
-      height: 100%;
+    &.is-many {
+      .col + .col:nth-child(n + 3) {
+        margin-top: 24px;
+      }
     }
 
     .col + .col {
@@ -24,8 +26,9 @@
   .post-caption {
     width: 468px;
     max-width: 100%;
-    margin: 0 auto 24px;
+    margin: 0 auto 32px;
     color: $silver-color;
+    text-align: center;
   }
 
   img {
