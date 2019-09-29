@@ -4,9 +4,6 @@
   .content-title {
     font-weight: bold;
     font-family: $base-heading;
-    margin-top: 32px;
-
-
 
     &.content-title-sm {
       font-size: $font-size-sm;
@@ -15,18 +12,17 @@
 
     &.content-title-lg {
       @include font-size-headline-lg;
-      margin-top: 40px;
+      margin-bottom: 24px;
     }
 
     &.content-title-xl {
       @include font-size-headline-xl;
       text-align: center;
-      margin-bottom: 40px;
     }
   }
 
   .content-text {
-    p {
+    p + p {
       margin-top: 16px
     }
   }
