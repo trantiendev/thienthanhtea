@@ -6,11 +6,11 @@
 <section class="section section-lg has-padding-top">
     <div class="container">
       <div class="row">
-        <div class="col col-8 col-offset-2 col-md-8 col-md-offset-2">
+        <div class="col col-8 col-offset-2 col--md-10 col--md-offset-1">
           <div class="post">
             <img class="post-image" src="https://media.giphy.com/media/964zGz0ijfBqE/giphy.gif" alt="">
             <div class="row">
-              <div class="col col-10 col-offset-1">
+              <div class="col col-10 col-offset-1 col--md-10 col--md-offset-1">
                 <div class="content">
                   <h3 class="content-title content-title-xl u-mb-40">THIÊN THÀNH KIM LỘC TRÀ<br>ĐỊA TỰU VƯỢNG TÀI GIA.</h3>
                   <p class="content-text">Hai chữ “ Thiên Thành” là từ ghép của 2 chữ đầu vế đối lại với nhau mang nghĩa thành công theo lẽ trời.</p>
@@ -26,7 +26,7 @@
 
             <div class="post-thumbnail">
               <div class="row">
-                <div class="col col-12">
+                <div class="col col-12 col--md-12">
                   <img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/img_about_1.jpg" alt="Image">
                 </div>
               </div>
@@ -36,7 +36,6 @@
               <div class="col col-10 col-offset-1">
                 <div class="content">
                   <p class="content-text">Đến năm 2010 công ty Thiên Thành đã đầu tư nhà máy để sản xuất thêm dòng trà trà Xanh viên va dòng Oolong để đáp ứng nhu cầu mới của thị trường. Với kinh nghiệm sản xuất các loại trà cho người tiêu dùng trong nước, công ty chúng tôi đảm bảo mang đến cho quý khách những loại trà phù hợp với gu thưởng thức của người Việt.</p>
-
                   <p class="content-text">Đến năm 2014 xin chuyển thể từ DN Tư Nhân lên Công Ty TNHH Trà Thiên Thành. Kinh doanh: Trà đen, trà xanh, trà ướp hương, trà ooLong.Với diện tích trên 2 hecta, được xây dựng để phục vụ khách du lịch trong cả nước đến tham quan và thưởng thức trà. Đã tiếp đón bao nhiều đoàn khách trong cả nước tại: 336 Trần Phú – xã Lộc Châu – TP Bảo Lộc</p>
                 </div>
               </div>
@@ -44,7 +43,7 @@
 
             <div class="post-thumbnail">
               <div class="row">
-                <div class="col col-12">
+                <div class="col col-12 col--md-12">
                   <img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/img_about_2.jpg" alt="Image">
                 </div>
               </div>
@@ -71,13 +70,13 @@
 
             <div class="post-thumbnail">
               <div class="row">
-                <div class="col col-md-12 col-4">
+                <div class="col col--md-4 col-4 col--sm-12">
                   <img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/img_about_3.jpg" alt="Image">
                 </div>
-                <div class="col col-md-12 col-4">
+                <div class="col col--md-4 col-4 col--sm-12">
                   <img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/img_about_4.jpg" alt="Image">
                 </div>
-                <div class="col col-md-12 col-4">
+                <div class="col col--md-4 col-4 col--sm-12">
                   <img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/img_about_5.jpg" alt="Image">
                 </div>
               </div>
@@ -86,52 +85,52 @@
 
             <div class="post-thumbnail is-many">
               <div class="row">
-                <div class="col col-md-12 col-6">
+                <div class="col col--md-6 col-6">
                   <img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/img_about_6.jpg" alt="Image">
                 </div>
-                <div class="col col-md-12 col-6">
+                <div class="col col--md-6 col-6">
                   <img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/img_about_7.jpg" alt="Image">
                 </div>
-                <div class="col col-md-12 col-4">
+                <div class="col col--md-6 col-4">
                   <img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/img_about_8.jpg" alt="Image">
                 </div>
-                <div class="col col-md-12 col-4">
+                <div class="col col--md-6 col-4">
                   <img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/img_about_9.jpg" alt="Image">
                 </div>
-                <div class="col col-md-12 col-4">
+                <div class="col col--md-6 col-4">
                   <img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/img_about_10.jpg" alt="Image">
                 </div>
-                <div class="col col-md-12 col-6">
+                <div class="col col--md-6 col-6">
                   <img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/img_about_11.jpg" alt="Image">
                 </div>
-                <div class="col col-md-12 col-6">
+                <div class="col col--md-6 col-6">
                   <img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/img_about_12.jpg" alt="Image">
                 </div>
-                <div class="col col-md-12 col-5">
+                <div class="col col--md-6 col-5">
                   <img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/img_about_13.jpg" alt="Image">
                 </div>
-                <div class="col col-md-12 col-3">
+                <div class="col col--md-6 col-3">
                   <img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/img_about_14.jpg" alt="Image">
                 </div>
-                <div class="col col-md-12 col-6">
+                <div class="col col--md-6 col-6">
                   <img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/img_about_16.jpg" alt="Image">
                 </div>
-                <div class="col col-md-12 col-6">
+                <div class="col col--md-6 col-6">
                   <img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/img_about_17.jpg" alt="Image">
                 </div>
-                <div class="col col-md-12 col-4">
+                <div class="col col--md-6 col-4">
                   <img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/img_about_18.jpg" alt="Image">
                 </div>
-                <div class="col col-md-12 col-4">
+                <div class="col col--md-6 col-4">
                   <img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/img_about_19.jpg" alt="Image">
                 </div>
-                <div class="col col-md-12 col-4">
+                <div class="col col--md-6 col-4">
                   <img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/img_about_20.jpg" alt="Image">
                 </div>
-                <div class="col col-md-12 col-4">
+                <div class="col col--md-6 col-4">
                   <img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/img_about_21.jpg" alt="Image">
                 </div>
-                <div class="col col-md-12 col-4">
+                <div class="col col--md-6 col-4">
                   <img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/img_about_22.jpg" alt="Image">
                 </div>
 
