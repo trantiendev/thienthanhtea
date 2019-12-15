@@ -1,4 +1,4 @@
-<?php 
+<?php
 /* Template Name: Teas Page */
   get_header();
 ?>
@@ -7,14 +7,14 @@
     <div class="container">
       <div class="page-title">
         <h1 class="headline-xl">Tea Categories</h1>
-        <p class="page-title-description">Oolong Tea is attractive for its rich floral and fruity fragrance.<br> By visiting tea gardens.</p>
+        <p class="page-title-description"><?php the_field('page_description_teas'); ?></p>
       </div>
     </div>
   </section>
   <section class="section section-xl">
     <div class="container">
       <div class="row">
-      <?php 
+      <?php
           $parent = get_category_by_slug('teas');
           $categories = get_categories(array(
             'parent' => $parent->term_id,
@@ -37,7 +37,7 @@
     </div>
   </section>
 
-  
+
   <?php get_footer('sup');?>
 </div>
 <?php get_footer();?>
