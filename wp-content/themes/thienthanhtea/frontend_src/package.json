@@ -34,7 +34,7 @@
     "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "minimatch": "^3.0.2",
     "siema": "^1.5.1"
   }
