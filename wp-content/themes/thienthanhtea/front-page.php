@@ -31,9 +31,9 @@
                 <a href="<?php echo home_url( '/teas/' ) ?>" class="sidebar-lead">Tea</a>
                 <ul class="sidebar-list">
                   <?php
-                    $parent = get_category_by_slug('teas');
+                    // $parent = get_the_category_by_ID(icl_object_id( 19, 'category', ICL_LANGUAGE_CODE ));
                     $categories = get_categories(array(
-                      'parent' => $parent->term_id,
+                      'parent' => icl_object_id( 19, 'category', ICL_LANGUAGE_CODE ),
                     ));
                     foreach($categories as $category) {
                       echo '<li class="sidebar-list-item"><a href="'. get_category_link($category->term_id) .'">'. $category->name .'</a></li>';
@@ -45,9 +45,10 @@
                 <a href="<?php echo home_url( '/teaware/' ) ?>" class="sidebar-lead">Teaware</a>
                 <ul class="sidebar-list">
                   <?php
-                    $parent = get_category_by_slug('teaware');
+                    // $parent = get_the_category_by_ID(icl_object_id( 8, 'category', ICL_LANGUAGE_CODE ));
+                    
                     $categories = get_categories(array(
-                      'parent' => $parent->term_id,
+                      'parent' => icl_object_id( 8, 'category', ICL_LANGUAGE_CODE ),
                     ));
                     foreach($categories as $category) {
                       echo '<li class="sidebar-list-item"><a href="'. get_category_link($category->term_id) .'">'. $category->name .'</a></li>';

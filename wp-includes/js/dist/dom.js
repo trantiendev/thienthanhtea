@@ -82,7 +82,7 @@ this["wp"] = this["wp"] || {}; this["wp"]["dom"] =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 379);
+/******/ 	return __webpack_require__(__webpack_require__.s = 365);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -91,6 +91,9 @@ this["wp"] = this["wp"] || {}; this["wp"]["dom"] =
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, "a", function() { return /* binding */ _toConsumableArray; });
 
 // CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js
 function _arrayWithoutHoles(arr) {
@@ -103,14 +106,13 @@ function _arrayWithoutHoles(arr) {
   }
 }
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/iterableToArray.js
-var iterableToArray = __webpack_require__(34);
+var iterableToArray = __webpack_require__(30);
 
 // CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js
 function _nonIterableSpread() {
   throw new TypeError("Invalid attempt to spread non-iterable instance");
 }
 // CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return _toConsumableArray; });
 
 
 
@@ -127,7 +129,7 @@ function _toConsumableArray(arr) {
 
 /***/ }),
 
-/***/ 34:
+/***/ 30:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -138,14 +140,39 @@ function _iterableToArray(iter) {
 
 /***/ }),
 
-/***/ 379:
+/***/ 365:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+// ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, "focus", function() { return /* binding */ build_module_focus; });
+__webpack_require__.d(__webpack_exports__, "isHorizontalEdge", function() { return /* reexport */ isHorizontalEdge; });
+__webpack_require__.d(__webpack_exports__, "isVerticalEdge", function() { return /* reexport */ isVerticalEdge; });
+__webpack_require__.d(__webpack_exports__, "getRectangleFromRange", function() { return /* reexport */ getRectangleFromRange; });
+__webpack_require__.d(__webpack_exports__, "computeCaretRect", function() { return /* reexport */ computeCaretRect; });
+__webpack_require__.d(__webpack_exports__, "placeCaretAtHorizontalEdge", function() { return /* reexport */ placeCaretAtHorizontalEdge; });
+__webpack_require__.d(__webpack_exports__, "placeCaretAtVerticalEdge", function() { return /* reexport */ placeCaretAtVerticalEdge; });
+__webpack_require__.d(__webpack_exports__, "isTextField", function() { return /* reexport */ isTextField; });
+__webpack_require__.d(__webpack_exports__, "documentHasSelection", function() { return /* reexport */ documentHasSelection; });
+__webpack_require__.d(__webpack_exports__, "isEntirelySelected", function() { return /* reexport */ isEntirelySelected; });
+__webpack_require__.d(__webpack_exports__, "getScrollContainer", function() { return /* reexport */ getScrollContainer; });
+__webpack_require__.d(__webpack_exports__, "getOffsetParent", function() { return /* reexport */ getOffsetParent; });
+__webpack_require__.d(__webpack_exports__, "replace", function() { return /* reexport */ replace; });
+__webpack_require__.d(__webpack_exports__, "remove", function() { return /* reexport */ remove; });
+__webpack_require__.d(__webpack_exports__, "insertAfter", function() { return /* reexport */ insertAfter; });
+__webpack_require__.d(__webpack_exports__, "unwrap", function() { return /* reexport */ unwrap; });
+__webpack_require__.d(__webpack_exports__, "replaceTag", function() { return /* reexport */ replaceTag; });
+__webpack_require__.d(__webpack_exports__, "wrap", function() { return /* reexport */ wrap; });
+
+// NAMESPACE OBJECT: ./node_modules/@wordpress/dom/build-module/focusable.js
 var focusable_namespaceObject = {};
 __webpack_require__.r(focusable_namespaceObject);
 __webpack_require__.d(focusable_namespaceObject, "find", function() { return find; });
+
+// NAMESPACE OBJECT: ./node_modules/@wordpress/dom/build-module/tabbable.js
 var tabbable_namespaceObject = {};
 __webpack_require__.r(tabbable_namespaceObject);
 __webpack_require__.d(tabbable_namespaceObject, "isTabbableIndex", function() { return isTabbableIndex; });
@@ -527,8 +554,9 @@ function isEdge(container, isReverse, onlyVertical) {
   }
 
   var side = isReverseDir ? 'left' : 'right';
-  var testRect = getRectangleFromRange(testRange);
-  return Math.round(testRect[side]) === Math.round(rangeRect[side]);
+  var testRect = getRectangleFromRange(testRange); // Allow the position to be 1px off.
+
+  return Math.abs(testRect[side] - rangeRect[side]) <= 1;
 }
 /**
  * Check whether the selection is horizontally at the edge of the container.
@@ -602,16 +630,10 @@ function getRectangleFromRange(range) {
 /**
  * Get the rectangle for the selection in a container.
  *
- * @param {Element} container Editable container.
- *
  * @return {?DOMRect} The rectangle.
  */
 
-function computeCaretRect(container) {
-  if (!container.isContentEditable) {
-    return;
-  }
-
+function computeCaretRect() {
   var selection = window.getSelection();
   var range = selection.rangeCount ? selection.getRangeAt(0) : null;
 
@@ -719,9 +741,14 @@ function caretRangeFromPoint(doc, x, y) {
 
 
 function hiddenCaretRangeFromPoint(doc, x, y, container) {
+  var originalZIndex = container.style.zIndex;
+  var originalPosition = container.style.position; // A z-index only works if the element position is not static.
+
   container.style.zIndex = '10000';
+  container.style.position = 'relative';
   var range = caretRangeFromPoint(doc, x, y);
-  container.style.zIndex = null;
+  container.style.zIndex = originalZIndex;
+  container.style.position = originalPosition;
   return range;
 }
 /**
@@ -769,20 +796,6 @@ function placeCaretAtVerticalEdge(container, isReverse, rect) {
 
     placeCaretAtHorizontalEdge(container, isReverse);
     return;
-  } // Check if the closest text node is actually further away.
-  // If so, attempt to get the range again with the y position adjusted to get the right offset.
-
-
-  if (range.startContainer.nodeType === TEXT_NODE) {
-    var parentNode = range.startContainer.parentNode;
-    var parentRect = parentNode.getBoundingClientRect();
-    var side = isReverse ? 'bottom' : 'top';
-    var padding = parseInt(getComputedStyle(parentNode).getPropertyValue("padding-".concat(side)), 10) || 0;
-    var actualY = isReverse ? parentRect.bottom - padding - buffer : parentRect.top + padding + buffer;
-
-    if (y !== actualY) {
-      range = hiddenCaretRangeFromPoint(document, x, actualY, container);
-    }
   }
 
   var selection = window.getSelection();
@@ -1022,24 +1035,6 @@ function wrap(newNode, referenceNode) {
 }
 
 // CONCATENATED MODULE: ./node_modules/@wordpress/dom/build-module/index.js
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "focus", function() { return build_module_focus; });
-/* concated harmony reexport isHorizontalEdge */__webpack_require__.d(__webpack_exports__, "isHorizontalEdge", function() { return isHorizontalEdge; });
-/* concated harmony reexport isVerticalEdge */__webpack_require__.d(__webpack_exports__, "isVerticalEdge", function() { return isVerticalEdge; });
-/* concated harmony reexport getRectangleFromRange */__webpack_require__.d(__webpack_exports__, "getRectangleFromRange", function() { return getRectangleFromRange; });
-/* concated harmony reexport computeCaretRect */__webpack_require__.d(__webpack_exports__, "computeCaretRect", function() { return computeCaretRect; });
-/* concated harmony reexport placeCaretAtHorizontalEdge */__webpack_require__.d(__webpack_exports__, "placeCaretAtHorizontalEdge", function() { return placeCaretAtHorizontalEdge; });
-/* concated harmony reexport placeCaretAtVerticalEdge */__webpack_require__.d(__webpack_exports__, "placeCaretAtVerticalEdge", function() { return placeCaretAtVerticalEdge; });
-/* concated harmony reexport isTextField */__webpack_require__.d(__webpack_exports__, "isTextField", function() { return isTextField; });
-/* concated harmony reexport documentHasSelection */__webpack_require__.d(__webpack_exports__, "documentHasSelection", function() { return documentHasSelection; });
-/* concated harmony reexport isEntirelySelected */__webpack_require__.d(__webpack_exports__, "isEntirelySelected", function() { return isEntirelySelected; });
-/* concated harmony reexport getScrollContainer */__webpack_require__.d(__webpack_exports__, "getScrollContainer", function() { return getScrollContainer; });
-/* concated harmony reexport getOffsetParent */__webpack_require__.d(__webpack_exports__, "getOffsetParent", function() { return getOffsetParent; });
-/* concated harmony reexport replace */__webpack_require__.d(__webpack_exports__, "replace", function() { return replace; });
-/* concated harmony reexport remove */__webpack_require__.d(__webpack_exports__, "remove", function() { return remove; });
-/* concated harmony reexport insertAfter */__webpack_require__.d(__webpack_exports__, "insertAfter", function() { return insertAfter; });
-/* concated harmony reexport unwrap */__webpack_require__.d(__webpack_exports__, "unwrap", function() { return unwrap; });
-/* concated harmony reexport replaceTag */__webpack_require__.d(__webpack_exports__, "replaceTag", function() { return replaceTag; });
-/* concated harmony reexport wrap */__webpack_require__.d(__webpack_exports__, "wrap", function() { return wrap; });
 /**
  * Internal dependencies
  */

@@ -4,7 +4,7 @@
         <div class="row">
           <div class="col col-3 col--md-3 col--sm-12">
             <p class="u-text-sm u-text-bold u-mb-16">Subcribe to get exclusive<br> promotions, news, from<br> Thienthanhtea</p>
-            <form class="form form-subcribe" method="post" action="http://localhost/thienthanhtea/?na=s" onsubmit="return newsletter_check(this)">
+            <form class="form form-subcribe" method="post" action="https://thienthanhtea.com/?na=s" onsubmit="return newsletter_check(this)">
               <input type="hidden" name="nlang" value="">
               <div class="tnp-field tnp-field-email"><input class="tnp-email form-input" placeholder="Your email goes here" type="email" name="ne" required></div>
               <div class="tnp-field tnp-field-button"><input class="btn btn-primary u-mt-16" type="submit" value="Subscribe" >
@@ -33,11 +33,11 @@
           <div class="col col-3 col--md-3 col--sm-12">
             <ul class="footer-link-list">
               <li class="footer-link-list-item">Address 1</li>
-              <li class="footer-link-list-item">Địa chỉ : 512 Trần Phú - TP Bảo Lộc - Lâm Đồng - Việt Nam</li>
+              <li class="footer-link-list-item">512 Trần Phú, Phường 2, Tp. Bảo Lộc, Tỉnh Lâm Đồng</li>
             </ul>
             <ul class="footer-link-list u-mt-16 u-no-ml">
               <li class="footer-link-list-item">Address 2</li>
-              <li class="footer-link-list-item">S6 ba vì, phường 15 quận 10, TP HCM </li>
+              <li class="footer-link-list-item">52/2 Lý Chính Thắng, Phường 8, Quận 3, TP HCM</li>
             </ul>
           </div>
         </div>
