@@ -7,7 +7,7 @@
     <div class="container">
       <div class="page-title">
         <h1 class="headline-xl">Gift Categories</h1>
-        <p class="page-title-description">Oolong Tea is attractive for its rich floral and fruity fragrance.<br> By visiting tea gardens.</p>
+        <p class="page-title-description">Những món quà tặng ý nghĩa sẽ thay lời muốn nói của bạn đến người thân yêu. </p>
       </div>
     </div>
   </section>

@@ -7,8 +7,7 @@
     <div class="container">
       <div class="row">
         <div class="col col-8 col-offset-2 col--md-10 col--md-offset-1">
-          <div class="post">
-            <img class="post-image" src="https://media.giphy.com/media/964zGz0ijfBqE/giphy.gif" alt="">
+          <!-- <div class="post">
             <div class="row">
               <div class="col col-10 col-offset-1 col--md-10 col--md-offset-1">
                 <div class="content">
@@ -150,7 +149,8 @@
               </div>
             </div>
 
-          </div>
+          </div> -->
+          <?php echo get_the_content() ?>
         </div>
       </div>
     </div>

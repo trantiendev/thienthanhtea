@@ -7,7 +7,7 @@
     <div class="container">
       <div class="page-title">
         <h1 class="headline-xl">Teaware Categories</h1>
-        <p class="page-title-description">Oolong Tea is attractive for its rich floral and fruity fragrance.<br> By visiting tea gardens.</p>
+        <p class="page-title-description">Trà ngon, không dừng lại ở việc chọn trà, mà còn phải lựa chọn ấm chén pha trà, đơn giản nhưng không kém phần cầu kỳ.</p>
       </div>
     </div>
   </section>

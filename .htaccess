@@ -1,12 +1,13 @@
+#This Apache config file was created by Duplicator Installer on 2021-05-07 13:48:01.
+#The original can be found in archived file with the name .htaccess__[HASH]
 
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteBase /thienthanhtea/
+RewriteBase /
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /thienthanhtea/index.php [L]
+RewriteRule . /index.php [L]
 </IfModule>
-
 # END WordPress
