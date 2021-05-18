@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "gulp watch",
-    "build": "gulp",
+    "start": "gulp",
+    "build": "gulp build",
     "deploy": "gulp deploy",
     "copy-to-deploy": "mkdir -p ~/Documents/_test_tmp && /bin/cp -Rf ./public/* ~/Documents/_test_tmp/ && git checkout deploy && /bin/cp -Rf ~/Documents/_test_tmp/* ./public/"
   },
@@ -14,13 +14,15 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.1.6",
+    "@babel/core": "^7.14.2",
     "@babel/preset-env": "^7.1.6",
+    "@babel/register": "^7.12.1",
     "babelify": "^10.0.0",
     "browser-sync": "^2.26.3",
     "browserify": "^16.2.3",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.0.0",
+    "gulp-babel": "^8.0.0",
     "gulp-clean": "^0.4.0",
     "gulp-nunjucks": "^3.0.0",
     "gulp-plumber": "^1.2.0",
