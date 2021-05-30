@@ -14,15 +14,14 @@
           <div class="col col-5 col-offset-1 col--md-offset-1 col--md-5 col--sm-12">
             <nav class="footer-nav">
               <ul class="footer-link-list">
-                <li class="footer-link-list-item">Products</li>
-                <li class="footer-link-list-item"><a href="<?php echo home_url( '/teas/' ) ?>">Tea</a></li>
-                <li class="footer-link-list-item"><a href="<?php echo home_url( '/teaware/' ) ?>">Teaware</a></li>
-                <li class="footer-link-list-item"><a href="<?php echo home_url( '/gift/' ) ?>">Gift</a></li>
-                <li class="footer-link-list-item"><a href="<?php echo home_url( '/feature/' ) ?>">Featured</a></li>
+                <li class="footer-link-list-item">Sản Phẩm</li>
+                <li class="footer-link-list-item"><a href="<?php echo home_url( '/teas/' ) ?>">Trà</a></li>
+                <li class="footer-link-list-item"><a href="<?php echo home_url( '/teaware/' ) ?>">Trà Cụ</a></li>
+                <li class="footer-link-list-item"><a href="<?php echo home_url( '/gift/' ) ?>">Quà Tặng</a></li>
               </ul>
               <ul class="footer-link-list">
                 <li class="footer-link-list-item">Company</li>
-                <li class="footer-link-list-item"><a href="<?php echo home_url( '/about-us/' ) ?>">About Us</a></li>
+                <li class="footer-link-list-item"><a href="<?php echo home_url( '/about-us/' ) ?>">Lịch sử hoạt động</a></li>
               </ul>
               <ul class="footer-link-list">
                 <li class="footer-link-list-item">Community</li>

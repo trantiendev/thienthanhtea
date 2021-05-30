@@ -46,6 +46,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <nav class="container">
     <div class="navbar js-navbar">
       <div class="navbar-collapse js-navbar-collapse"></div>
+      <a href="<?php echo get_option("siteurl"); ?>" class="navbar-brand"><img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/ico_logo.png" alt="ico logo"></a>
       <?php
       $dropdown_walker = new Dropdown_List_Walker;
       wp_nav_menu(
@@ -57,10 +58,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         )
       );
     ?>
-      <a href="<?php echo get_option("siteurl"); ?>" class="navbar-brand"><img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/ico_logo.png" alt="ico logo"></a>
-      <div class="navbar-search js-navbar-search">
-        <button class="btn btn-search navbar-search-btn js-btn-seach"></button>
-        <?php get_search_form(); ?>
+      <div class="navbar-right">
+        <div class="navbar-right-block">
+          <a class="navbar-right-list" href="#"><img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/ico_laz.png" width="22" alt="Icon Lazada "></a>
+          <a class="navbar-right-list" href="#"><img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/ico_tiki.png" width="22" alt="Icon Tiki"></a>
+          <a class="navbar-right-list" href="#"><img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/ico_shoppe.png" width="22" alt="Icon Shoppe"></a>
+        </div>
+        <div class="navbar-right-block">
+          <div class="navbar-right-list">
+            <?php do_action('wpml_add_language_selector'); ?>
+          </div>
+          <a href="tel:+4733378901" class="navbar-right-list"><img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/ico_phone.png" width="20" alt="Icon Phone"></a>
+          <div class="navbar-search navbar-right-list js-navbar-search">
+            <button class="btn btn-search navbar-search-btn js-btn-seach"></button>
+            <?php get_search_form(); ?>
+          </div>
+        </div>
       </div>
     </div>
   </nav>

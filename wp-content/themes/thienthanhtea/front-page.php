@@ -88,7 +88,7 @@
 
   <section class="section-headline">
     <div class="container">
-      <h2 class="headline-lg">New Features</h2>
+      <h2 class="headline-lg">Best Seller</h2>
     </div>
   </section>
   <section class="section section-lg">
@@ -97,7 +97,7 @@
         <?php
           $args = array(
             'post_type' => 'post',
-            'category_name' => 'new feature',
+            'category_name' => 'best-seller',
             'posts_per_page' => 8,
           );
           $_posts = new WP_Query($args);
@@ -127,24 +127,23 @@
       </div>
     </div>
   </section>
-  <section class="section-headline">
-    <div class="container">
-      <h2 class="headline-lg">Visit Tea Garden</h2>
-    </div>
-  </section>
+
   <section class="section section-lg">
     <div class="container container-full">
-      <div class="section-video">
+      <!-- <div class="section-video">
         <?php the_field('home_video'); ?>
-      </div>
+      </div> -->
+      <img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/dummy-banner.png" alt="Image">
     </div>
   </section>
+
   <section class="section-headline">
     <div class="container">
       <h2 class="headline-lg">Tea Class and Education</h2>
     </div>
   </section>
-  <section class="section section-xl">
+
+  <section class="section section-lg">
     <div class="container">
       <div class="row">
         <?php
@@ -172,6 +171,85 @@
             </div>
           <?php endwhile; ?>
         <?php endif;?>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-headline">
+    <div class="container">
+      <h2 class="headline-lg">Our Partners</h2>
+    </div>
+  </section>
+
+  <section class="section section-lg">
+    <div class="container">
+      <div class="row box-wapper">
+        <div class="col col-3 col--md-4 col--sm-12">
+          <div class="box">
+            <img class="box-image" src="<?php bloginfo('template_directory');?>/frontend_src/public/img/logo-partner-01.png" alt="image logo">
+            <p class="box-heading">Angel-in-us</p>
+          </div>
+        </div>
+        <div class="col col-3 col--md-4 col--sm-12">
+          <div class="box">
+            <img class="box-image" src="<?php bloginfo('template_directory');?>/frontend_src/public/img/logo-partner-02.png" alt="image logo">
+            <p class="box-heading">Lotteria</p>
+          </div>
+        </div>
+        <div class="col col-3 col--md-4 col--sm-12">
+          <div class="box">
+            <img class="box-image" src="<?php bloginfo('template_directory');?>/frontend_src/public/img/logo-partner-03.png" alt="image logo">
+            <p class="box-heading">Nova Consumer</p>
+          </div>
+        </div>
+        <div class="col col-3 col--md-4 col--sm-12">
+          <div class="box">
+            <img class="box-image" src="<?php bloginfo('template_directory');?>/frontend_src/public/img/logo-partner-04.png" alt="image logo">
+            <p class="box-heading">Milano Coffee</p>
+          </div>
+        </div>
+        <div class="col col-3 col--md-4 col--sm-12">
+          <div class="box">
+            <img class="box-image" src="<?php bloginfo('template_directory');?>/frontend_src/public/img/logo-partner-05.png" alt="image logo">
+            <p class="box-heading">HA</p>
+          </div>
+        </div>
+        <div class="col col-3 col--md-4 col--sm-12">
+          <div class="box">
+            <img class="box-image" src="<?php bloginfo('template_directory');?>/frontend_src/public/img/logo-partner-06.png" alt="image logo">
+            <p class="box-heading">Dotea</p>
+          </div>
+        </div>
+        <div class="col col-3 col--md-4 col--sm-12">
+          <div class="box">
+            <img class="box-image" src="<?php bloginfo('template_directory');?>/frontend_src/public/img/logo-partner-07.png" alt="image logo">
+            <p class="box-heading">Nova Consumer</p>
+          </div>
+        </div>
+        <div class="col col-3 col--md-4 col--sm-12">
+          <div class="box">
+            <img class="box-image" src="<?php bloginfo('template_directory');?>/frontend_src/public/img/logo-partner-08.png" alt="image logo">
+            <p class="box-heading">APIS</p>
+          </div>
+        </div>
+        <div class="col col-3 col--md-4 col--sm-12">
+          <div class="box">
+            <img class="box-image" src="<?php bloginfo('template_directory');?>/frontend_src/public/img/logo-partner-09.png" alt="image logo">
+            <p class="box-heading">Trà Việt</p>
+          </div>
+        </div>
+        <div class="col col-3 col--md-4 col--sm-12">
+          <div class="box">
+            <img class="box-image" src="<?php bloginfo('template_directory');?>/frontend_src/public/img/logo-partner-010.png" alt="image logo">
+            <p class="box-heading">NK Company</p>
+          </div>
+        </div>
+        <div class="col col-3 col--md-4 col--sm-12">
+          <div class="box">
+            <img class="box-image" src="<?php bloginfo('template_directory');?>/frontend_src/public/img/logo-partner-011.png" alt="image logo">
+            <p class="box-heading">Phuong Binh Group</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
