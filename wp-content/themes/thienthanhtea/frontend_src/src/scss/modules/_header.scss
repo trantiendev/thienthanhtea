@@ -7,7 +7,7 @@
 }
 
 .navbar {
-  @include flexbox(space-between, center);
+  @include flexbox(flex-start, center);
   position: relative;
 
   @include mediaquery--not-lg() {
@@ -36,26 +36,41 @@
   }
 
   .navbar-brand {
-    @include x-centered();
-    top: 16px;
+    margin-right: 40px;
+
+    @include mediaquery--md() {
+      margin: 0 0 0 24px;
+    }
 
     @include mediaquery--not-lg() {
-      top: 8px;
+      flex: 2;
+    }
+
+    @include mediaquery--sm() {
+      margin: 8px 0 0 32px;
+      width: 53px;
+    }
+
+    @include mediaquery--xs() {
+      margin: 8px 16px 0 10px;
+      flex: none;
     }
 
     img {
-      width: 96px;
-      height: 96px;
+      width: 53px;
+      height: 56px;
+      vertical-align: middle;
 
-      @include mediaquery--not-lg() {
-        width: 56px;
-        height: 56px;
+      @include mediaquery--md() {
+        width: 38px;
+        height: 40px;
       }
     }
   }
 
   .navbar-list {
     @include flexbox(flex-start, flex-start);
+    flex: 2;
 
     @include mediaquery--not-lg() {
       background: $light-color;
@@ -88,18 +103,111 @@
 
     &:not(:last-child) {
       @include mediaquery--lg() {
-        padding-right: 24px;
+        padding-right: 12px;
       }
     }
 
     + .navbar-list-item {
+      @include mediaquery--lg() {
+        padding-left: 12px;
+      }
+
       @include mediaquery--not-lg() {
         margin-top: 24px;
       }
     }
   }
 
+  .navbar-right {
+    display: flex;
+
+    .navbar-right-block {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      &:first-child {
+        padding-right: 16px;
+
+        @include mediaquery--sm() {
+          padding-right: 12px;
+        }
+
+        &:after {
+          content: '';
+          position: absolute;
+          top: -1px;
+          right: 0;
+          width: 1px;
+          height: 24px;
+          background-color: $analogous-color;
+        }
+      }
+
+      &:last-child {
+        padding-left: 16px;
+
+        @include mediaquery--sm() {
+          padding-left: 12px;
+        }
+      }
+
+      .navbar-right-list {
+        display: inline-block;
+
+        img {
+          vertical-align: middle;
+        }
+
+        + .navbar-right-list {
+          margin-left: 16px;
+
+          @include mediaquery--sm() {
+            margin-left: 12px;
+          }
+        }
+      }
+    }
+  }
+
   .navbar-search {
     position: relative;
+  }
+}
+
+// Custom dropdown list wpml
+.wpml-ls-legacy-dropdown-click {
+  width: auto;
+
+  .wpml-ls-current-language:hover > a {
+    background-color: transparent;
+  }
+
+  a {
+    padding: 0;
+    border: none;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+    }
+  }
+
+  a.wpml-ls-item-toggle {
+    padding: 0;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  .wpml-ls-sub-menu {
+    border-top: none;
+    padding-top: 4px;
+  }
+
+  .wpml-ls-flag {
+    width: 20px;
+    height: 20px;
   }
 }
