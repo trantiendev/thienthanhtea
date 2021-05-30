@@ -14,12 +14,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.14.2",
-    "@babel/preset-env": "^7.1.6",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
     "@babel/register": "^7.12.1",
+    "@babel/plugin-transform-runtime": "^6.23.0",
     "babelify": "^10.0.0",
-    "browser-sync": "^2.26.3",
-    "browserify": "^16.2.3",
+    "browser-sync": "^2.26.13",
+    "browserify": "^17.0.0",
+    "glslify": "^7.1.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-babel": "^8.0.0",
@@ -28,7 +30,8 @@
     "gulp-plumber": "^1.2.0",
     "gulp-sass": "^4.0.2",
     "gulp-scss-lint": "^0.7.1",
-    "gulp-sourcemaps": "^2.6.4",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser-js": "^5.2.2",
     "gulp-uglify": "^3.0.1",
     "gulp-util": "^3.0.8",
     "run-sequence": "^2.2.1",
@@ -36,6 +39,8 @@
     "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
+    "@wordpress/hooks": "^3.1.0",
+    "babel-runtime": "^6.26.0",
     "lodash": "^4.17.11",
     "minimatch": "^3.0.2",
     "siema": "^1.5.1"
