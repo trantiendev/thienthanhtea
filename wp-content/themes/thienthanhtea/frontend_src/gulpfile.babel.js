@@ -8,7 +8,8 @@ import {
 import nunjucks from 'gulp-nunjucks';
 import sass from 'gulp-sass';
 import sourcemap from 'gulp-sourcemaps';
-// import autoprefixer from 'gulp-autoprefixer';
+import terser from 'gulp-terser-js';
+import autoprefixer from 'gulp-autoprefixer';
 import scssLint from 'gulp-scss-lint';
 import browserify from 'browserify';
 import sourceStream from 'vinyl-source-stream';
@@ -50,7 +51,7 @@ export function styles(done) {
       .pipe(scssLint({ 'config': '.scss-lint.yml' }))
       .pipe(sourcemap.init())
       .pipe(sass({ outputStyle: 'compressed' }))
-      // .pipe(autoprefixer({ browsers: ['last 2 versions'], cascade: false }))
+      .pipe(autoprefixer())
       .pipe(sourcemap.write())
       .pipe(dest(`${init.destPath}/css`))
       .pipe(browserSync.stream())
@@ -63,13 +64,20 @@ export function scripts() {
     entries: `${init.srcPath}/js/main.js`,
     debug: false
   })
-    .transform(babelify, { 'presets': ['@babel/preset-env'] })
-    .bundle().on('error', err => {
+    .transform(babelify, {
+      'presets': ['@babel/preset-env'],
+      'plugins': ['@babel/plugin-transform-runtime']
+    })
+    .transform(['glslify', { global: true }])
+    .bundle()
+    .on('error', function(err) {
       console.log(err);
+      this.emit('end');
     })
     .pipe(sourceStream('main.js'))
     .pipe(buffer())
-    // .pipe(sourcemap.init())
+    .pipe(sourcemap.init({loadMaps: true}))
+    .pipe(terser())
     .pipe(uglify())
     .pipe(sourcemap.write())
     .pipe(dest(`${init.destPath}/js`))
@@ -83,24 +91,26 @@ export function watchTask() {
     port: 8001
   })
 
-  watch(`${init.srcPath}/scss/**/*.scss`, styles);
-  watch(`${init.srcPath}/js/**/*.js`, scripts).on('change',browserSync.reload);
   watch(`${init.srcPath}/html/**/*.html`, template).on('change', browserSync.reload);
+  watch(`${init.srcPath}/scss/**/*.scss`, styles);
+  watch(`${init.srcPath}/js/**/*.js`, scripts).on('change', browserSync.reload);
 }
 
 function cleanDir(done) {
-  src(`${init.destPath}/*`)
+  src([`${init.destPath}/*`, `!${init.destPath}/img`])
     .pipe(clean())
 
   done()
 }
 
 exports.build = series(
+  cleanDir,
   parallel(template, images, styles, scripts)
 );
 
 exports.default = series(
-  parallel(template, images, styles, scripts, watchTask)
+  parallel(template, images, styles, scripts),
+  watchTask
 );
 
 exports.deploy = series(function(callback) {
