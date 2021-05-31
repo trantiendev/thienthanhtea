@@ -2,7 +2,7 @@
     <div class="container">
       <div class="footer-global-nav">
         <div class="row">
-          <div class="col col-3 col--md-3 col--sm-12">
+          <div class="col col-3 col--md-4 col--sm-12">
             <p class="u-text-sm u-text-bold u-mb-16">Subcribe to get exclusive<br> promotions, news, from<br> Thienthanhtea</p>
             <form class="form form-subcribe" method="post" action="https://thienthanhtea.com/?na=s" onsubmit="return newsletter_check(this)">
               <input type="hidden" name="nlang" value="">
@@ -11,7 +11,7 @@
               </div>
             </form>
           </div>
-          <div class="col col-5 col-offset-1 col--md-offset-1 col--md-5 col--sm-12">
+          <div class="col col-5 col-offset-1 col--md-offset-0 col--md-8 col--sm-12">
             <nav class="footer-nav">
               <ul class="footer-link-list">
                 <li class="footer-link-list-item">Sản Phẩm</li>
@@ -29,7 +29,7 @@
               </ul>
             </nav>
           </div>
-          <div class="col col-3 col--md-3 col--sm-12">
+          <div class="col col-3 col--md-offset-4 col--md-8 col--sm-12">
             <ul class="footer-link-list">
               <li class="footer-link-list-item">Address 1</li>
               <li class="footer-link-list-item">512 Trần Phú, Phường 2, Tp. Bảo Lộc, Tỉnh Lâm Đồng</li>

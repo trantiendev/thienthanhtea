@@ -1,7 +1,7 @@
 <section class="section-balance section-gray">
     <div class="container">
       <div class="row">
-        <div class="col col-3 col--md-3 col--sm-6">
+        <div class="col col-3 col--md-6 col--sm-6">
           <div class="card card-quaternary">
             <img class="card-image" src="<?php bloginfo('template_directory');?>/frontend_src/public/img/ico_footer-01.png" alt="ico_leaves">
             <div class="card-body">
@@ -10,7 +10,7 @@
             </div>
           </div>
         </div>
-        <div class="col col-3 col--md-3 col--sm-6">
+        <div class="col col-3 col--md-6 col--sm-6">
           <div class="card card-quaternary">
             <img class="card-image" src="<?php bloginfo('template_directory');?>/frontend_src/public/img/ico_footer-02.png" alt="ico_cup-tea">
             <div class="card-body">
@@ -19,7 +19,7 @@
             </div>
           </div>
         </div>
-        <div class="col col-3 col--md-3 col--sm-6">
+        <div class="col col-3 col--md-6 col--sm-6">
           <div class="card card-quaternary">
             <img class="card-image" src="<?php bloginfo('template_directory');?>/frontend_src/public/img/ico_footer-03.png" alt="ico_box">
             <div class="card-body">
@@ -28,7 +28,7 @@
             </div>
           </div>
         </div>
-        <div class="col col-3 col--md-3 col--sm-6">
+        <div class="col col-3 col--md-6 col--sm-6">
           <div class="card card-quaternary">
             <img class="card-image" src="<?php bloginfo('template_directory');?>/frontend_src/public/img/ico_footer-04.png" alt="ico_shopping">
             <div class="card-body">
