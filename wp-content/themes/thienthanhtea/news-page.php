@@ -6,12 +6,40 @@
   <section class="section section-lg has-padding-top">
     <div class="container">
       <div class="page-title">
-        <h1 class="headline-xl">Newsroom</h1>
+        <h1 class="headline-xl">Blog</h1>
         <p class="page-title-description">Những điều thi vị của trà mà bạn có thể chưa biết.</p>
       </div>
     </div>
   </section>
-  <section class="section section-lg">
+
+  <section class="section section-sm">
+    <div class="container">
+      <div class="tabnav js-filter-post">
+        <label class="tabnav-item">
+          <input type="radio" name="radio-tab" value="all" checked>
+          <span>Tất Cả</span>
+        </label>
+        <label class="tabnav-item">
+          <input type="radio" name="radio-tab" value="knowledge-tea">
+          <span>Kiến Thức Pha Trà</span>
+        </label>
+        <label class="tabnav-item">
+          <input type="radio" name="radio-tab" value="brew-tea">
+          <span>Pha Chế Trà</span>
+        </label>
+        <label class="tabnav-item">
+          <input type="radio" name="radio-tab" value="news">
+          <span>Tin Tức</span>
+        </label>
+        <label class="tabnav-item">
+          <input type="radio" name="radio-tab" value="hiring">
+          <span>Tuyển Dụng</span>
+        </label>
+      </div>
+    </div>
+  </section>
+
+  <section id="all" class="section section-lg js-tab-content">
     <div class="container">
       <?php
         $args = array(
@@ -35,6 +63,18 @@
         <?php endwhile; ?>
       <?php endif;?>
     </div>
+  </section>
+  <section id="knowledge-tea" class="section section-lg u-hidden js-tab-content">
+    <p>Kiến Thức Pha Trà</p>
+  </section>
+  <section id="brew-tea" class="section section-lg u-hidden js-tab-content">
+    <p>Pha Chế Trà</p>
+  </section>
+  <section id="news" class="section section-lg u-hidden js-tab-content">
+    <p>Tin Tức</p>
+  </section>
+  <section id="hiring" class="section section-lg u-hidden js-tab-content">
+    <p>Hiring</p>
   </section>
   <?php get_footer('sup'); ?>
 </div>

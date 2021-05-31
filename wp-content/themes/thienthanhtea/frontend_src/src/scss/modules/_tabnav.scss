@@ -1,0 +1,41 @@
+.tabnav {
+  .tabnav-item {
+    color: $dark-color;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    cursor: pointer;
+
+    @include mediaquery--sm() {
+      &:nth-child(n + 3) {
+        margin-top: 8px;
+      }
+    }
+
+    + .tabnav-item {
+      margin-left: 4px;
+    }
+  }
+
+  input[type='radio'] {
+    display: none;
+
+    + span {
+      display: block;
+      color: $dark-color;
+      border: 1px solid $whisper-color;
+      border-radius: 24px;
+      padding: 8px 16px;
+
+      &:hover {
+        border-color: #FF845C;
+      }
+    }
+
+    &:checked + span {
+      background-color: $orange-color;
+      color: $white-smoke-color;
+      border-color: #FF845C;
+    }
+  }
+}
