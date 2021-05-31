@@ -16,3 +16,25 @@ export const onclickBtnSearch = () => {
     navbarSearchBtn.classList.remove('is-active')
   })
 }
+
+export const onFilterPost = () => {
+  const filterPost = document.querySelector('.js-filter-post')
+  if (!filterPost) return
+
+  const inputValueFilterS = [...filterPost.querySelectorAll('input[name=radio-tab]')]
+
+  inputValueFilterS.forEach(inputValueFilter => {
+    inputValueFilter.addEventListener('change', event => {
+      displayContent(event.target.value)
+    })
+  })
+}
+
+const displayContent = inputValue => {
+  const tabContents = [...document.querySelectorAll('.js-tab-content')]
+  if (!tabContents.length) return
+
+  tabContents.forEach(tabContent => {
+    tabContent.getAttribute('id') === inputValue ? tabContent.classList.remove('u-hidden') : tabContent.classList.add('u-hidden')
+  })
+}
