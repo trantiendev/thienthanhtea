@@ -28,7 +28,7 @@
             <h3 class="sidebar-header headline">Category</h3>
             <div class="sidebar-body">
               <div class="sidebar-block">
-                <a href="<?php echo home_url( '/teas/' ) ?>" class="sidebar-lead">Tea</a>
+                <a href="<?php echo home_url( '/teas/' ) ?>" class="sidebar-lead"><?php echo get_category_by_slug('teas')->name; ?></a>
                 <ul class="sidebar-list">
                   <?php
                     // $parent = get_the_category_by_ID(icl_object_id( 19, 'category', ICL_LANGUAGE_CODE ));
@@ -42,7 +42,7 @@
                 </ul>
               </div>
               <div class="sidebar-block">
-                <a href="<?php echo home_url( '/teaware/' ) ?>" class="sidebar-lead">Teaware</a>
+                <a href="<?php echo home_url( '/teaware/' ) ?>" class="sidebar-lead"><?php echo get_category_by_slug('teaware')->name; ?></a>
                 <ul class="sidebar-list">
                   <?php
                     // $parent = get_the_category_by_ID(icl_object_id( 8, 'category', ICL_LANGUAGE_CODE ));
@@ -57,12 +57,11 @@
                 </ul>
               </div>
               <div class="sidebar-block">
-                <a href="<?php echo home_url( '/gift/' ) ?>" class="sidebar-lead">Gift</a>
+                <a href="<?php echo home_url( '/gift/' ) ?>" class="sidebar-lead"><?php echo get_category_by_slug('gift')->name; ?></a>
                 <ul class="sidebar-list">
                   <?php
-                    $parent = get_category_by_slug('gift');
                     $categories = get_categories(array(
-                      'parent' => $parent->term_id,
+                      'parent' => icl_object_id( 9, 'category', ICL_LANGUAGE_CODE ),
                     ));
                     foreach($categories as $category) {
                       echo '<li class="sidebar-list-item"><a href="'. get_category_link($category->term_id) .'">'. $category->name .'</a></li>';
@@ -88,12 +87,12 @@
 
   <section class="section-headline">
     <div class="container">
-      <h2 class="headline-lg">Best Seller</h2>
+      <h2 class="headline-lg"><?php echo get_category_by_slug('best-seller')->name; ?></h2>
     </div>
   </section>
-  <section class="section section-lg">
+  <section class="section section-lg list-scroll-wrapper list-scroll-unique">
     <div class="container">
-      <div class="row">
+      <div class="row list-scroll">
         <?php
           $args = array(
             'post_type' => 'post',
@@ -104,15 +103,15 @@
         ?>
         <?php if($_posts->have_posts()): ?>
           <?php while($_posts->have_posts()) : $_posts->the_post();?>
-            <div class="col col-3 col--md-6 col--sm-12">
-              <div class="card card-primary">
+            <div class="col col-3 col--md-4 col--sm-12">
+              <div class="card card-primary list-scroll-item <?php if (in_category('best-seller')) echo 'has-best-seller'; ?>">
                 <?php if(has_post_thumbnail()): ?>
                 <a href="<?php the_permalink();?>" class="card-image" style="background-image: url(<?php the_post_thumbnail_url(); ?>)"></a>
                 <?php endif;?>
                 <div class="card-body">
                   <h3 class="card-headline headline"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
-                  <p class="card-content"><?php echo wp_strip_all_tags(get_the_excerpt()) ?></p>
                   <?php $product_unit = get_field('product_unit');?>
+                  <p class="card-content"><?php echo $product_unit['product_unit_description']; ?></p>
                   <p class="card-price">
                     <?php echo $product_unit['product_unit_price']; ?>
                     <?php if($product_unit['product_unit_weight']):?>
@@ -164,13 +163,12 @@
                   <?php endif;?>
                   <div class="card-body">
                     <h3 class="card-headline headline"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
-                    <p class="card-content"><?php echo wp_strip_all_tags(get_the_excerpt()) ?></p>
                   </div>
                 </div>
               </div>
             </div>
           <?php endwhile; ?>
-        <?php endif;?>
+        <?php endif; wp_reset_postdata();?>
       </div>
     </div>
   </section>
@@ -181,76 +179,23 @@
     </div>
   </section>
 
-  <section class="section section-lg">
+  <section class="section section-lg list-scroll-wrapper">
     <div class="container">
-      <div class="row box-wapper">
-        <div class="col col-3 col--md-4 col--sm-12">
-          <div class="box">
-            <img class="box-image" src="<?php bloginfo('template_directory');?>/frontend_src/public/img/logo-partner-01.png" alt="image logo">
-            <p class="box-heading">Angel-in-us</p>
+      <?php if( have_rows('home_partners') ): ?>
+        <div class="row list-scroll">
+          <?php while( have_rows('home_partners') ): the_row();
+            $home_partners_brand = get_sub_field('partners_brand');
+            $home_partners_logo = get_sub_field('partners_logo');
+          ?>
+          <div class="col col-3 col--md-4 col--sm-12">
+            <div class="box list-scroll-item">
+              <img class="box-image" src="<?php echo $home_partners_logo['url'] ?>" alt="image logo">
+              <p class="box-heading"><?php echo $home_partners_brand ?></p>
+            </div>
           </div>
+          <?php endwhile; ?>
         </div>
-        <div class="col col-3 col--md-4 col--sm-12">
-          <div class="box">
-            <img class="box-image" src="<?php bloginfo('template_directory');?>/frontend_src/public/img/logo-partner-02.png" alt="image logo">
-            <p class="box-heading">Lotteria</p>
-          </div>
-        </div>
-        <div class="col col-3 col--md-4 col--sm-12">
-          <div class="box">
-            <img class="box-image" src="<?php bloginfo('template_directory');?>/frontend_src/public/img/logo-partner-03.png" alt="image logo">
-            <p class="box-heading">Nova Consumer</p>
-          </div>
-        </div>
-        <div class="col col-3 col--md-4 col--sm-12">
-          <div class="box">
-            <img class="box-image" src="<?php bloginfo('template_directory');?>/frontend_src/public/img/logo-partner-04.png" alt="image logo">
-            <p class="box-heading">Milano Coffee</p>
-          </div>
-        </div>
-        <div class="col col-3 col--md-4 col--sm-12">
-          <div class="box">
-            <img class="box-image" src="<?php bloginfo('template_directory');?>/frontend_src/public/img/logo-partner-05.png" alt="image logo">
-            <p class="box-heading">HA</p>
-          </div>
-        </div>
-        <div class="col col-3 col--md-4 col--sm-12">
-          <div class="box">
-            <img class="box-image" src="<?php bloginfo('template_directory');?>/frontend_src/public/img/logo-partner-06.png" alt="image logo">
-            <p class="box-heading">Dotea</p>
-          </div>
-        </div>
-        <div class="col col-3 col--md-4 col--sm-12">
-          <div class="box">
-            <img class="box-image" src="<?php bloginfo('template_directory');?>/frontend_src/public/img/logo-partner-07.png" alt="image logo">
-            <p class="box-heading">Nova Consumer</p>
-          </div>
-        </div>
-        <div class="col col-3 col--md-4 col--sm-12">
-          <div class="box">
-            <img class="box-image" src="<?php bloginfo('template_directory');?>/frontend_src/public/img/logo-partner-08.png" alt="image logo">
-            <p class="box-heading">APIS</p>
-          </div>
-        </div>
-        <div class="col col-3 col--md-4 col--sm-12">
-          <div class="box">
-            <img class="box-image" src="<?php bloginfo('template_directory');?>/frontend_src/public/img/logo-partner-09.png" alt="image logo">
-            <p class="box-heading">Trà Việt</p>
-          </div>
-        </div>
-        <div class="col col-3 col--md-4 col--sm-12">
-          <div class="box">
-            <img class="box-image" src="<?php bloginfo('template_directory');?>/frontend_src/public/img/logo-partner-010.png" alt="image logo">
-            <p class="box-heading">NK Company</p>
-          </div>
-        </div>
-        <div class="col col-3 col--md-4 col--sm-12">
-          <div class="box">
-            <img class="box-image" src="<?php bloginfo('template_directory');?>/frontend_src/public/img/logo-partner-011.png" alt="image logo">
-            <p class="box-heading">Phuong Binh Group</p>
-          </div>
-        </div>
-      </div>
+      <?php endif; ?>
     </div>
   </section>
   <?php get_footer('sup'); ?>

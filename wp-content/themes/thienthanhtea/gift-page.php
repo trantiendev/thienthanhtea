@@ -6,8 +6,8 @@
   <section class="section section-lg has-padding-top">
     <div class="container">
       <div class="page-title">
-        <h1 class="headline-xl">Gift Categories</h1>
-        <p class="page-title-description">Những món quà tặng ý nghĩa sẽ thay lời muốn nói của bạn đến người thân yêu. </p>
+        <h1 class="headline-xl"><?php echo get_category_by_slug('teaware')->name; ?></h1>
+        <p class="page-title-description"><?php echo wp_strip_all_tags(category_description(9)); ?></p>
       </div>
     </div>
   </section>

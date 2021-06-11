@@ -46,7 +46,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <nav class="container">
     <div class="navbar js-navbar">
       <div class="navbar-collapse js-navbar-collapse"></div>
-      <a href="<?php echo get_option("siteurl"); ?>" class="navbar-brand"><img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/ico_logo.png" alt="ico logo"></a>
+      <div class="navbar-logo">
+        <a href="<?php echo get_option("siteurl"); ?>" class="navbar-brand"><img src="<?php bloginfo('template_directory');?>/frontend_src/public/img/ico_logo.png" alt="ico logo"></a>
+      </div>
       <?php
       $dropdown_walker = new Dropdown_List_Walker;
       wp_nav_menu(

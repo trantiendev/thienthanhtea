@@ -56,8 +56,8 @@
           <div class="col col-4 col-offset-1 col--md-5 col--sm-12">
             <div class="banner banner-overlap">
               <h3 class="banner-title headline-lg"><?php the_title(); ?></h3>
-              <p class="banner-text"><?php echo wp_strip_all_tags(get_the_content()) ?></p>
               <?php $product_unit = get_field('product_unit');?>
+              <p class="banner-text"><?php echo $product_unit['product_unit_description']; ?></p>
               <p class="banner-price headline"><?php echo $product_unit['product_unit_price']; ?></p>
               <p class="banner-info"><?php echo $product_unit['product_unit_weight']; ?></p>
               <a href="<?php echo $product_unit['product_unit_link']; ?>" class="btn btn-primary" target="_blank">Mua Ngay</a>
@@ -104,6 +104,9 @@
         <div class="row">
           <div class="col col-8 col-offset-2">
             <div class="post">
+              <!-- TODO: Refactor when finished the content -->
+              <?php $content = get_post()->post_content; if(empty($content)):?>
+
               <?php if( have_rows('single_post_content_large') ): ?>
               <?php while( have_rows('single_post_content_large') ): the_row();
                 $single_post_content_large_image = get_sub_field('single_post_content_large_image');
@@ -179,6 +182,10 @@
 
               <?php endwhile; ?>
               <?php endif; ?>
+
+                <?php else: ?>
+                  <?php echo get_the_content(); ?>
+              <?php endif;?>
             </div>
           </div>
         </div>

@@ -11,7 +11,7 @@
               </div>
             </form>
           </div>
-          <div class="col col-5 col-offset-1 col--md-offset-0 col--md-8 col--sm-12">
+          <div class="col col-6 col--md-8 col--sm-12">
             <nav class="footer-nav">
               <ul class="footer-link-list">
                 <li class="footer-link-list-item">Sản Phẩm</li>
@@ -20,12 +20,19 @@
                 <li class="footer-link-list-item"><a href="<?php echo home_url( '/gift/' ) ?>">Quà Tặng</a></li>
               </ul>
               <ul class="footer-link-list">
-                <li class="footer-link-list-item">Company</li>
+                <li class="footer-link-list-item">Giới Thiệu</li>
                 <li class="footer-link-list-item"><a href="<?php echo home_url( '/about-us/' ) ?>">Lịch sử hoạt động</a></li>
               </ul>
               <ul class="footer-link-list">
-                <li class="footer-link-list-item">Community</li>
-                <li class="footer-link-list-item"><a href="<?php echo home_url( '/news/' ) ?>">News</a></li>
+                <li class="footer-link-list-item">Bài Viết</li>
+                <li class="footer-link-list-item"><a href="<?php echo home_url( '/news/' ) ?>">Kiến Thức</a></li>
+                <li class="footer-link-list-item"><a href="<?php echo home_url( '/news/' ) ?>">Tin Tức</a></li>
+                <li class="footer-link-list-item"><a href="<?php echo home_url( '/news/' ) ?>">Công Thức</a></li>
+                <li class="footer-link-list-item"><a href="<?php echo home_url( '/news/' ) ?>">Tuyển Dụng</a></li>
+              </ul>
+              <ul class="footer-link-list">
+                <li class="footer-link-list-item">Mua Hàng</li>
+                <li class="footer-link-list-item"><a href="<?php echo home_url( '/shopping-guide/' ) ?>">Hướng dẫn Tiki, Shoppe, Lazada</a></li>
               </ul>
             </nav>
           </div>

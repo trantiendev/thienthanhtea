@@ -6,8 +6,8 @@
   <section class="section section-lg has-padding-top">
     <div class="container">
       <div class="page-title">
-        <h1 class="headline-xl">Teaware Categories</h1>
-        <p class="page-title-description">Trà ngon, không dừng lại ở việc chọn trà, mà còn phải lựa chọn ấm chén pha trà, đơn giản nhưng không kém phần cầu kỳ.</p>
+        <h1 class="headline-xl"><?php echo get_category_by_slug('teaware')->name; ?></h1>
+        <p class="page-title-description"><?php echo wp_strip_all_tags(category_description(8)); ?></p>
       </div>
     </div>
   </section>
