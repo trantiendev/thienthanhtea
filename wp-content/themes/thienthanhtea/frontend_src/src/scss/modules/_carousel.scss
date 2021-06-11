@@ -9,7 +9,7 @@
     background-position: center center;
     height: 560px;
 
-    @include mediaquery--sm(){
+    @include mediaquery--sm() {
       height: 320px;
     }
   }
@@ -30,12 +30,12 @@
 
   .carousel-prev {
     left: 0;
-    background: $light-color url(../img/ico_arrow-left.png) center / 24px 24px no-repeat;
+    background: $light-color url("../img/ico_arrow-left.png") center / 24px 24px no-repeat;
   }
 
   .carousel-next {
     right: 0;
-    background: $light-color url(../img/ico_arrow-right.png) center / 24px 24px no-repeat;
+    background: $light-color url("../img/ico_arrow-right.png") center / 24px 24px no-repeat;
   }
 
   .carousel-dots {

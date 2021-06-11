@@ -2,7 +2,7 @@
   -webkit-appearance: none;
   display: inline-block;
   vertical-align: middle;
-  padding: 12px 12px;
+  padding: 12px;
   font-weight: $font-weight-normal;
   font-size: $font-size-base;
   line-height: $line-height-zero;
@@ -26,10 +26,10 @@
     width: 20px;
     height: 20px;
     padding: 0;
-    background: url(../img/ico_search.png) center / 100% no-repeat;
+    background: url("../img/ico_search.png") center / 100% no-repeat;
 
     &.is-active {
-      background: url(../img/ico_close.png) center / 100% no-repeat;
+      background: url("../img/ico_close.png") center / 100% no-repeat;
     }
   }
 

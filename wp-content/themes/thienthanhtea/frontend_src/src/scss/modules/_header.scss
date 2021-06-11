@@ -16,7 +16,7 @@
 
   &.is-active {
     .navbar-collapse {
-      background: url(../img/ico_arrow-left.png) center / 100% no-repeat;
+      background: url("../img/ico_arrow-left.png") center / 100% no-repeat;
     }
 
     .navbar-list {
@@ -25,7 +25,7 @@
   }
 
   .navbar-collapse {
-    background: url(../img/ico_hamberger.png) center / 100% no-repeat;
+    background: url("../img/ico_hamberger.png") center / 100% no-repeat;
     display: none;
     width: 20px;
     height: 20px;
@@ -35,7 +35,7 @@
     }
   }
 
-  .navbar-brand {
+  .navbar-logo {
     margin-right: 40px;
 
     @include mediaquery--md() {
@@ -48,12 +48,19 @@
 
     @include mediaquery--sm() {
       margin: 8px 0 0 32px;
-      width: 53px;
     }
 
     @include mediaquery--xs() {
       margin: 8px 16px 0 10px;
       flex: none;
+    }
+  }
+
+  .navbar-brand {
+    display: inline-block;
+
+    @include mediaquery--sm() {
+      width: 53px;
     }
 
     img {
@@ -185,7 +192,7 @@
 
   a {
     padding: 0;
-    border: none;
+    border: 0;
 
     &:hover,
     &:focus {

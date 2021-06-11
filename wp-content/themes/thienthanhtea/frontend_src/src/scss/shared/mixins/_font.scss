@@ -1,7 +1,7 @@
 @mixin font-size-headline-xl() {
   font-size: 32px;
   line-height: 1.25;
-  letter-spacing: -0.48px;
+  letter-spacing: -.48px;
   font-weight: 700;
   font-family: $base-heading;
 }
@@ -9,7 +9,7 @@
 @mixin font-size-headline-lg() {
   font-size: 24px;
   line-height: 1.33334;
-  letter-spacing: -0.36px;
+  letter-spacing: -.36px;
   font-weight: 700;
   font-family: $base-heading;
 }
@@ -17,7 +17,7 @@
 @mixin font-size-headline() {
   font-size: 18px;
   line-height: 1.33334;
-  letter-spacing: -0.27px;
+  letter-spacing: -.27px;
   font-weight: 700;
   font-family: $base-heading;
 }

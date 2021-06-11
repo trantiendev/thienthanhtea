@@ -16,6 +16,7 @@ import sourceStream from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
 import uglify from 'gulp-uglify';
 import babelify from 'babelify';
+import babel from "gulp-babel";
 import browser from "browser-sync";
 import gtil from 'gulp-util';
 import clean from 'gulp-clean';
@@ -78,7 +79,12 @@ export function scripts() {
     .pipe(buffer())
     .pipe(sourcemap.init({loadMaps: true}))
     .pipe(terser())
-    .pipe(uglify())
+    .pipe(
+      babel({
+        presets: ["@babel/env"],
+      })
+    )
+    // .pipe(uglify())
     .pipe(sourcemap.write())
     .pipe(dest(`${init.destPath}/js`))
 }

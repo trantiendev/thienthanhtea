@@ -33,19 +33,3 @@
     text-align: center;
   }
 }
-
-[class^='col'] + [class^='col']:nth-child(n + 5) .box {
-  margin-top: 24px;
-}
-
-[class^='col'] + [class^='col']:nth-child(n + 4) .box {
-  @include mediaquery--md() {
-    margin-top: 24px;
-  }
-}
-
-[class^='col'] + [class^='col']:nth-child(n + 2) .box {
-  @include mediaquery--sm() {
-    margin-top: 0;
-  }
-}

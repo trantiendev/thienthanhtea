@@ -1,10 +1,20 @@
 .dropdown {
   @include mediaquery--not-lg() {
-    background: url(../img/ico_plus.png) right center / 24px 24px no-repeat;
+    background: url("../img/ico_plus.png") right center / 24px 24px no-repeat;
+  }
+
+  @include mediaquery--lg() {
+    &:hover {
+      .dropdown-menu {
+        display: flex;
+        opacity: 0;
+        animation: fadeInDown .3s ease-in-out forwards;
+      }
+    }
   }
 
   .dropdown-menu {
-    background: $white-smoke-color url(../img/bg_menu.png) center / cover;
+    background: $white-smoke-color url("../img/bg_menu.png") center / cover;
     justify-content: flex-start;
     align-items: center;
     position: absolute;
@@ -59,19 +69,9 @@
     }
   }
 
-  @include mediaquery--lg() {
-    &:hover {
-      .dropdown-menu {
-        display: flex;
-        opacity: 0;
-        animation: fadeInDown .3s ease-in-out forwards;
-      }
-    }
-  }
-
   &.is-active {
     @include mediaquery--not-lg() {
-      background: url(../img/ico_minus.png) right 4px / 24px 24px no-repeat;
+      background: url("../img/ico_minus.png") right 4px / 24px 24px no-repeat;
     }
 
     .dropdown-menu {

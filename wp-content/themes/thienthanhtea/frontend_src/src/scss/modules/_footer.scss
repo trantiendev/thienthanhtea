@@ -36,6 +36,12 @@
     @include flexbox(flex-start, flex-start);
   }
 
+  .footer-nav {
+    @include mediaquery--sm() {
+      flex-wrap: wrap;
+    }
+  }
+
   .footer-social {
     @include mediaquery--sm() {
       text-align: center;
@@ -55,13 +61,32 @@
   }
 
   .footer-link-list {
-    .footer-link-list-item:first-child {
-      @include font-size-headline--sm();
-      margin-bottom: 16px;
+    flex: 1;
+
+    @include mediaquery--sm() {
+      flex: auto;
+      width: 50%;
+    }
+
+    &:nth-child(n + 3) {
+      @include mediaquery--sm() {
+        margin-top: 24px;
+      }
+    }
+
+    .footer-link-list-item {
+      &:first-child {
+        @include font-size-headline--sm();
+        margin-bottom: 16px;
+      }
     }
 
     + .footer-link-list {
       margin-left: 40px;
+
+      @include mediaquery--sm() {
+        margin-left: 0;
+      }
     }
   }
 }

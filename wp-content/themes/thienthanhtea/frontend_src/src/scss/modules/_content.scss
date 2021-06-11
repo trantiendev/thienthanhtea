@@ -26,10 +26,10 @@
     p + p {
       margin-top: 16px
     }
-  }
 
-  .content-text + .content-text {
-    margin-top: 16px
+    + .content-text {
+      margin-top: 16px
+    }
   }
 
   .content-block + .content-block {
