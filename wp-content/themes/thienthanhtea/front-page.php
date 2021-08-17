@@ -135,7 +135,23 @@
   <section class="section section-lg">
     <div class="container container-full">
       <div class="section-video">
-        <?php the_field('home_video'); ?>
+        <?php
+          $iframe = get_field('home_video');
+
+          preg_match('/src="(.+?)"/', $iframe, $matches);
+          $src = $matches[1];
+
+          $params = array(
+            'autoplay' => 1
+          );
+          $new_src = add_query_arg($params, $src);
+          $iframe = str_replace($src, $new_src, $iframe);
+
+          $attributes = 'frameborder="0"';
+          $iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);
+
+          echo $iframe;
+        ?>
       </div>
     </div>
   </section>
