@@ -88,8 +88,12 @@
       width: calc(100% + 32px);
       height: calc(100vh - 56px);
       overflow-y: auto;
-      padding: 44px 16px;
+      padding: 8px 40px;
       margin-left: -16px;
+    }
+
+    @include mediaquery--sm() {
+      padding: 8px 16px;
     }
   }
 
@@ -97,6 +101,15 @@
     @include mediaquery--lg() {
       padding-top: 32px;
       padding-bottom: 32px;
+    }
+
+    @include mediaquery--not-lg() {
+      padding-top: 24px;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $whisper-color;
+        padding-bottom: 24px;
+      }
     }
 
     > a {
@@ -117,10 +130,6 @@
     + .navbar-list-item {
       @include mediaquery--lg() {
         padding-left: 12px;
-      }
-
-      @include mediaquery--not-lg() {
-        margin-top: 24px;
       }
     }
   }
@@ -193,6 +202,7 @@
   a {
     padding: 0;
     border: 0;
+    background-color: transparent;
 
     &:hover,
     &:focus {
@@ -214,7 +224,7 @@
   }
 
   .wpml-ls-flag {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
   }
 }

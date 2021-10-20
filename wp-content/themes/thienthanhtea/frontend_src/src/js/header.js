@@ -2,7 +2,11 @@ export const header = () => {
   const navbar = document.querySelector('.js-navbar')
   const hamburger = navbar.querySelector('.js-navbar-collapse')
   const dropDowns = [...navbar.querySelectorAll('.js-dropdown')]
+  const submenuDropdown = [...navbar.querySelectorAll('.js-submenu-dropdown')]
   if (!navbar) return
+
+  // Triggle class handle for php menu
+  handleClassSubmenu(submenuDropdown)
 
   dropDowns.forEach(dropDown => {
     window.addEventListener('resize', onHandleClickMenu)
@@ -24,7 +28,9 @@ export const header = () => {
       dropDown.removeEventListener('click', dropdownMenu)
     }
 
-    function dropdownMenu() {
+    function dropdownMenu(e) {
+      if(e.target !== e.currentTarget) return
+
       getSiblings(dropDown).map(item => {
         item.classList.remove('is-active')
       })
@@ -35,6 +41,12 @@ export const header = () => {
   function navbarCollapse() {
     navbar.classList.toggle('is-active')
   }
+}
+
+const handleClassSubmenu = submenus => {
+  if (!submenus.length) return
+
+  submenus.map(submenu => submenu.querySelector('.dropdown-menu').classList.add('submenu'))
 }
 
 const getSiblings = element => {

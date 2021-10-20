@@ -5,7 +5,7 @@
 
   @include mediaquery--lg() {
     &:hover {
-      .dropdown-menu {
+      .dropdown-menu:not(.submenu) {
         display: flex;
         opacity: 0;
         animation: fadeInDown .3s ease-in-out forwards;
@@ -14,13 +14,12 @@
   }
 
   .dropdown-menu {
-    background: $white-smoke-color url("../img/bg_menu.png") center / cover;
-    justify-content: flex-start;
+    background-color: $light-color;
+    justify-content: center;
     align-items: center;
     position: absolute;
     top: 100%;
     left: 0;
-    padding: 24px 16px;
     display: none;
 
     @include mediaquery--lg() {
@@ -30,52 +29,152 @@
 
     @include mediaquery--not-lg() {
       position: relative;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
       justify-content: flex-start;
-      margin-left: -16px;
       margin-top: 12px;
-      width: calc(100% + 32px);
+    }
+  }
+
+  .submenu-dropdown {
+    background-position: right 15px;
+
+    a {
+      font-family: Merriweather;
+    }
+
+    .submenu {
+      display: none;
+      flex-wrap: wrap;
+
+      @include mediaquery--lg() {
+        background: $white-smoke-color url("../img/bg_menu.png") center / cover;
+        padding: 16px 0;
+      }
+
+      @include mediaquery--md() {
+        margin-left: -8px;
+        margin-right: -8px;
+        margin-top: 0;
+      }
+
+      @include mediaquery--sm() {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        margin-left: -16px;
+        margin-top: 12px;
+        padding: 0 16px;
+        width: calc(100% + 32px);
+      }
+    }
+
+    &.is-active {
+      @include mediaquery--not-lg() {
+        background-position: right 15px;
+      }
+
+      .submenu {
+        display: flex;
+      }
+    }
+  }
+
+  .submenu-list,
+  .dropdown-list {
+    a img {
+      display: block;
+      border-radius: 8px;
+      border: 1px solid $whisper-color;
+      width: 100px;
+      height: 100px;
+      padding-right: 0 !important;
+
+      @include mediaquery--lg() {
+        margin: 0 auto;
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  .submenu-list {
+    text-align: center;
+
+    @include mediaquery--lg() {
+      min-width: 130px;
+      padding: 8px 15px;
+    }
+
+    @include mediaquery--md() {
+      padding: 8px;
+    }
+
+    @include mediaquery--sm() {
+      min-width: 120px;
+    }
+
+    + .submenu-list {
+      @include mediaquery--sm() {
+        margin-left: 16px;
+      }
+    }
+
+    a img {
+      @include mediaquery--not-lg() {
+        width: 120px;
+      }
     }
   }
 
   .dropdown-list {
-    width: calc(100% / 8);
-    text-align: center;
+    @include mediaquery--lg() {
+      min-width: 130px;
+      text-align: center;
+      padding: 24px 15px;
+    }
 
-    @include mediaquery--not-lg() {
-      min-width: 112px;
+    &:hover {
+      @include mediaquery--lg() {
+        .submenu {
+          display: flex;
+          opacity: 0;
+          animation: fadeInDown .3s ease-in-out forwards;
+        }
+      }
     }
 
     + .dropdown-list {
       @include mediaquery--not-lg() {
-        margin-left: 24px;
+        margin-top: 16px;
       }
     }
 
-    a {
+    > a {
       font-size: $font-size-sm;
       font-weight: bold;
-    }
 
-    img {
-      display: block;
-      border-radius: 50%;
-      margin: 0 auto;
-      margin-bottom: 16px;
-      width: 100px;
-      height: 100px;
-      padding-right: 0 !important;
+      @include mediaquery--not-lg() {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      img {
+        @include mediaquery--not-lg() {
+          margin-right: 16px;
+          width: 56px;
+          height: 56px;
+        }
+      }
     }
   }
 
   &.is-active {
     @include mediaquery--not-lg() {
-      background: url("../img/ico_minus.png") right 4px / 24px 24px no-repeat;
+      background: url("../img/ico_minus.png") right 28px / 24px 24px no-repeat;
     }
 
-    .dropdown-menu {
-      display: flex;
+    > .dropdown-menu:not(.submenu) {
+      display: block;
     }
   }
 }
