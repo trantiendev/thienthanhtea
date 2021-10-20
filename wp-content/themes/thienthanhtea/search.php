@@ -6,8 +6,8 @@ $total_results = $wp_query->found_posts;
   <section class="section section-lg has-padding-top">
     <div class="container">
       <div class="page-title">
-        <h1 class="headline-xl">Kết quả tìm kiếm: “<?php echo get_search_query() ?>”</h1>
-        <p class="page-title-description">Có <?= $total_results ?> kết quả tìm kiếm</p>
+        <h1 class="headline-xl"><?= _e('Kết quả tìm kiếm', 'searchPost') ?>: “<?php echo get_search_query() ?>”</h1>
+        <p class="page-title-description"><?= _e('Có', 'searchPost') ?> <?= $total_results ?> <?= _e('kết quả tìm kiếm', 'searchPost') ?></p>
       </div>
     </div>
   </section>
@@ -18,7 +18,7 @@ $total_results = $wp_query->found_posts;
         <?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
           <?php get_template_part('content', 'search') ?>
         <?php endwhile; else : ?>
-          <p><?php esc_html_e('Không tìm thấy sản phẩm nào khớp với lựa chọn của bạn.'); ?></p>
+          <p><?php esc_html_e('Không tìm thấy sản phẩm nào khớp với lựa chọn của bạn.', 'searchPost'); ?></p>
         <?php endif; ?>
       </div>
     </div>

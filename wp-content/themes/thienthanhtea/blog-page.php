@@ -7,7 +7,7 @@
     <div class="container">
       <div class="page-title">
         <h1 class="headline-xl">Blog</h1>
-        <p class="page-title-description">Những điều thi vị của trà mà bạn có thể chưa biết.</p>
+        <p class="page-title-description"><?php the_field('blog_page_description'); ?></p>
       </div>
     </div>
   </section>
@@ -17,34 +17,34 @@
       <div class="tabnav js-filter-post">
         <label class="tabnav-item">
           <input type="radio" name="radio-tab" value="all" checked>
-          <span>Tất Cả</span>
+          <span><?php _e('Tất Cả', 'blogTab'); ?></span>
         </label>
         <label class="tabnav-item">
           <input type="radio" name="radio-tab" value="tea-knowledge">
-          <span>Kiến Thức Pha Trà</span>
+          <span><?php _e('Kiến Thức Trà', 'blogTab'); ?></span>
         </label>
         <label class="tabnav-item">
           <input type="radio" name="radio-tab" value="tea-brew">
-          <span>Pha Chế Trà</span>
+          <span><?php _e('Công Thức Pha Chế Trà', 'blogTab'); ?></span>
         </label>
         <label class="tabnav-item">
           <input type="radio" name="radio-tab" value="news">
-          <span>Tin Tức</span>
+          <span><?php _e('Tin Tức', 'blogTab'); ?></span>
         </label>
         <label class="tabnav-item">
           <input type="radio" name="radio-tab" value="hiring">
-          <span>Tuyển Dụng</span>
+          <span><?php _e('Tuyển Dụng', 'blogTab'); ?></span>
         </label>
       </div>
     </div>
   </section>
 
   <section id="all" class="section section-lg js-tab-content">
-  <div class="container">
+    <div class="container">
       <?php
         $args = array(
           'post_type' => 'post',
-          'category_name' => 'hiring,tea-brewing,tea-knowledge,news',
+          'category_name' => 'hiring,tea-brew,tea-knowledge,news',
           'posts_per_page' => -1
         );
         $_posts = new WP_Query($args);
@@ -97,7 +97,7 @@
       <?php
         $args = array(
           'post_type' => 'post',
-          'category_name' => 'tea-brewing',
+          'category_name' => 'tea-brew',
           'posts_per_page' => -1
         );
         $_posts = new WP_Query($args);

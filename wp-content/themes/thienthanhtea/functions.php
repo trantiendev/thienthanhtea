@@ -45,6 +45,14 @@ function new_excerpt_more($more) {
 
 add_filter('excerpt_more', 'new_excerpt_more');
 
+function wpd_testimonials_query( $query ){
+  if( !is_admin() && $query->is_main_query() ) {
+    $query->set( 'posts_per_page', -1 );
+  }
+}
+
+add_action( 'pre_get_posts', 'wpd_testimonials_query' );
+
 register_nav_menus(
   array(
     'top-menu' => __('Top menu', 'theme'),
