@@ -104,3 +104,44 @@
     // }
   }
 }
+
+.list-scroll-wrapper {
+  &.list-scroll-unique .list-scroll-best-seller {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: -20px;
+    margin-bottom: -20px;
+  }
+}
+
+.list-scroll {
+  flex-wrap: nowrap;
+  width: 100vw;
+
+  > div {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  [class^='col'] + [class^='col'] [class^='card'] {
+    margin-top: 0;
+  }
+
+  .list-scroll-item {
+    width: calc(100% - 24px);
+    margin-left: 12px;
+    margin-right: 12px;
+
+    @include mediaquery--not-sm() {
+      max-width: calc((#{$container-width} / 4) - #{$col-gutter});
+    }
+  }
+}
+
+.list-row-archive-category:not(:last-child) {
+  margin-bottom: 64px;
+
+  @include mediaquery--sm() {
+    margin-bottom: 40px;
+  }
+}

@@ -34,6 +34,7 @@ a {
 
 .thumbnail {
   height: 524px;
+  display: block;
 }
 
 .category-title,
@@ -43,13 +44,25 @@ a {
 
 .category-title {
   @include flexbox(flex-start, center);
+
+  @include mediaquery--not-lg {
+    @include flexbox(center, center);
+    flex-direction: column;
+  }
+
+  .category-title-lead {
+    @include mediaquery--not-lg {
+      margin-bottom: 16px;
+    }
+  }
 }
 
 .page-title {
   text-align: center;
 
   .page-title-description {
-    margin-top: 16px;
     @include font-size-body();
+    margin: 16px auto 0;
+    max-width: 538px;
   }
 }

@@ -1,6 +1,6 @@
 .post {
   .post-image {
-    margin-bottom: 48px;
+    margin-bottom: 32px;
   }
 
   .content {
@@ -34,5 +34,48 @@
   img {
     width: 100%;
     vertical-align: middle;
+  }
+
+  // Modify editor style
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: $base-heading;
+    font-weight: bold;
+  }
+
+  h2 {
+    @include font-size-headline-lg;
+    margin-bottom: 32px;
+  }
+
+  h3,
+  h4 {
+    @include font-size-headline;
+    margin-bottom: 16px;
+  }
+
+  figure {
+    margin-bottom: 32px;
+
+    img + figcaption {
+      margin-top: 12px;
+    }
+
+    figcaption {
+      max-width: 468px;
+      margin: 0 auto;
+      color: $silver-color;
+      text-align: center;
+    }
+  }
+
+  .wp-block-image {
+    margin-bottom: 32px;
+  }
+
+  p {
+    margin-bottom: 24px;
   }
 }

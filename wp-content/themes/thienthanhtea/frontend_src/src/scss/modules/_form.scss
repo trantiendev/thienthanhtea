@@ -20,4 +20,8 @@
 .form-subcribe {
   width: 285px;
   max-width: 100%;
+
+  @include mediaquery--not-lg() {
+    width: 100%;
+  }
 }

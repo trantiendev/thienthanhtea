@@ -16,3 +16,36 @@ export const onclickBtnSearch = () => {
     navbarSearchBtn.classList.remove('is-active')
   })
 }
+
+export const onFilterPost = () => {
+  const filterPost = document.querySelector('.js-filter-post')
+  if (!filterPost) return
+
+  const inputValueFilterS = [...filterPost.querySelectorAll('input[name=radio-tab]')]
+
+  inputValueFilterS.forEach(inputValueFilter => {
+    inputValueFilter.addEventListener('change', event => {
+      history.pushState({}, '', `#${event.target.value}`);
+      displayContent(event.target.value)
+    })
+
+    if (location.hash && location.hash.substring(1) === inputValueFilter.value) {
+      inputValueFilter.checked = true
+      displayContent(inputValueFilter.value)
+
+      // Trigger when content display
+      setTimeout(() => {
+        window.scrollTo(0, 0)
+      }, 10);
+    }
+  })
+}
+
+const displayContent = inputValue => {
+  const tabContents = [...document.querySelectorAll('.js-tab-content')]
+  if (!tabContents.length) return
+
+  tabContents.forEach(tabContent => {
+    tabContent.getAttribute('id') === inputValue ? tabContent.classList.remove('u-hidden') : tabContent.classList.add('u-hidden')
+  })
+}

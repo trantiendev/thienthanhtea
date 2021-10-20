@@ -5,6 +5,14 @@
   &.is-accident > p {
     @include font-size-headline-xl();
   }
+
+  &.is-list-category {
+    margin-bottom: 40px;
+
+    @include mediaquery--sm() {
+      margin-bottom: 24px;
+    }
+  }
 }
 
 .headline-xl {

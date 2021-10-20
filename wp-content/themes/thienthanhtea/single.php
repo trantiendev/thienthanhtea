@@ -38,7 +38,7 @@
       <div class="container">
         <div class="row row-reverse">
           <div class="col col-7 col--md-7 col--sm-12">
-            <h3 class="headline u-mb-24">Summary</h3>
+            <h3 class="headline u-mb-24"><?php _e('Chi tiết', 'teaSummary'); ?></h3>
             <ul class="list-description">
               <?php if( have_rows('list_description') ): ?>
                 <?php while( have_rows('list_description') ): the_row();
@@ -50,22 +50,47 @@
                   <p class="list-description-body"><?php echo $list_description_info; ?></p>
                 </li>
                 <?php endwhile; ?>
+                <?php else: ?>
+                  <li class="list-description-item">
+                    <p class="list-description-label"><?php _e('Nguồn gốc', 'teaSummary'); ?>:</p>
+                  </li>
+                  <li class="list-description-item">
+                    <p class="list-description-label"><?php _e('Mùa vụ', 'teaSummary'); ?>:</p>
+                  </li>
+                  <li class="list-description-item">
+                    <p class="list-description-label"><?php _e('Cánh lá', 'teaSummary'); ?>:</p>
+                  </li>
+                  <li class="list-description-item">
+                    <p class="list-description-label"><?php _e('Mùa hương', 'teaSummary'); ?>:</p>
+                  </li>
+                  <li class="list-description-item">
+                    <p class="list-description-label"><?php _e('Vị', 'teaSummary'); ?>:</p>
+                  </li>
+                  <li class="list-description-item">
+                    <p class="list-description-label"><?php _e('Chất nước', 'teaSummary'); ?>:</p>
+                  </li>
+                  <li class="list-description-item">
+                    <p class="list-description-label"><?php _e('Điều kiện kho', 'teaSummary'); ?>:</p>
+                  </li>
+                  <li class="list-description-item">
+                    <p class="list-description-label"><?php _e('Hạn sử dụng', 'teaSummary'); ?>:</p>
+                  </li>
               <?php endif; ?>
             </ul>
           </div>
           <div class="col col-4 col-offset-1 col--md-5 col--sm-12">
             <div class="banner banner-overlap">
               <h3 class="banner-title headline-lg"><?php the_title(); ?></h3>
-              <p class="banner-text"><?php echo wp_strip_all_tags(get_the_content()) ?></p>
               <?php $product_unit = get_field('product_unit');?>
+              <p class="banner-text"><?php echo $product_unit['product_unit_description']; ?></p>
               <p class="banner-price headline"><?php echo $product_unit['product_unit_price']; ?></p>
               <p class="banner-info"><?php echo $product_unit['product_unit_weight']; ?></p>
-              <a href="<?php echo $product_unit['product_unit_link']; ?>" class="btn btn-primary" target="_blank">Mua Ngay</a>
+              <a href="<?php echo $product_unit['product_unit_link']; ?>" class="btn btn-primary" target="_blank"><?php _e('Mua Ngay', 'buyNow'); ?></a>
             </div>
-            <h3 class="headline u-mb-24 u-mt-40">Recommend Brewing Method</h3>
+            <h3 class="headline u-mb-24 u-mt-40"><?php _e('Hướng dẫn pha', 'teaBrewingMethod'); ?></h3>
             <div class="content">
               <div class="content-block">
-                <p class="content-title content-title-sm">Cup Method</p>
+                <p class="content-title content-title-sm"><?php _e('Pha từng ly', 'teaBrewingMethod'); ?></p>
                 <ul class="list-infomation">
                   <?php if( have_rows('list_cup_method') ): ?>
                     <?php while( have_rows('list_cup_method') ): the_row();
@@ -73,11 +98,16 @@
                     ?>
                     <li><?php echo $list_cup_method_text ?></li>
                     <?php endwhile; ?>
+                    <?php else: ?>
+                      <li><?php _e('Dung tích ly', 'teaBrewingMethod'); ?>: 200ml</li>
+                      <li><?php _e('Nhiệt độ', 'teaBrewingMethod'); ?>: 100℃</li>
+                      <li><?php _e('Trà', 'teaBrewingMethod'); ?>: 4gram</li>
+                      <li><?php _e('Thời gian', 'teaBrewingMethod'); ?>: 5 - 8 mins</li>
                   <?php endif; ?>
                 </ul>
               </div>
               <div class="content-block">
-                <p class="content-title content-title-sm">Chinese Gongfu Method</p>
+                <p class="content-title content-title-sm"><?php _e('Pha ấm', 'teaBrewingMethod'); ?></p>
                 <ul class="list-infomation">
                   <?php if( have_rows('list_chinese_gongfu_method') ): ?>
                     <?php while( have_rows('list_chinese_gongfu_method') ): the_row();
@@ -85,6 +115,11 @@
                     ?>
                     <li><?php echo $list_chinese_gongfu_method_text; ?></li>
                     <?php endwhile; ?>
+                    <?php else: ?>
+                      <li><?php _e('Dung tích ấm', 'teaBrewingMethod'); ?>: 500ml</li>
+                      <li><?php _e('Nhiệt độ', 'teaBrewingMethod'); ?>: 100℃</li>
+                      <li><?php _e('Trà', 'teaBrewingMethod'); ?>: 10gram</li>
+                      <li><?php _e('Thời gian', 'teaBrewingMethod'); ?>: 5 - 8 mins</li>
                   <?php endif; ?>
                 </ul>
               </div>
@@ -104,6 +139,9 @@
         <div class="row">
           <div class="col col-8 col-offset-2">
             <div class="post">
+              <!-- TODO: Refactor when finished the content -->
+              <?php $content = get_post()->post_content; if(empty($content)):?>
+
               <?php if( have_rows('single_post_content_large') ): ?>
               <?php while( have_rows('single_post_content_large') ): the_row();
                 $single_post_content_large_image = get_sub_field('single_post_content_large_image');
@@ -179,6 +217,10 @@
 
               <?php endwhile; ?>
               <?php endif; ?>
+
+                <?php else: ?>
+                  <?php echo get_the_content(); ?>
+              <?php endif;?>
             </div>
           </div>
         </div>
