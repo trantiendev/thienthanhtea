@@ -9,7 +9,15 @@
     }
 
     .col--sm-12 + .col--sm-12 {
-      margin-top: 24px;
+      @include mediaquery--sm() {
+        margin-top: 24px;
+      }
+
+      &:nth-child(3) {
+        @include mediaquery--not-lg() {
+          margin-top: 24px;
+        }
+      }
     }
   }
 

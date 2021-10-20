@@ -22,7 +22,8 @@ export default class Carousel {
       autoPlay: false,
       perPage: 1,
       threshold: 60,
-      dot: true
+      dot: true,
+      rtl: true,
     }, options)
   }
 

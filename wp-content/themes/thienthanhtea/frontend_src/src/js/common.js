@@ -25,8 +25,19 @@ export const onFilterPost = () => {
 
   inputValueFilterS.forEach(inputValueFilter => {
     inputValueFilter.addEventListener('change', event => {
+      history.pushState({}, '', `#${event.target.value}`);
       displayContent(event.target.value)
     })
+
+    if (location.hash && location.hash.substring(1) === inputValueFilter.value) {
+      inputValueFilter.checked = true
+      displayContent(inputValueFilter.value)
+
+      // Trigger when content display
+      setTimeout(() => {
+        window.scrollTo(0, 0)
+      }, 10);
+    }
   })
 }
 

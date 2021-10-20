@@ -59,6 +59,10 @@
   figure {
     margin-bottom: 32px;
 
+    img + figcaption {
+      margin-top: 12px;
+    }
+
     figcaption {
       max-width: 468px;
       margin: 0 auto;

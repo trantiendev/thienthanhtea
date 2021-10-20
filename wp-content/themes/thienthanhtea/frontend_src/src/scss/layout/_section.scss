@@ -74,6 +74,23 @@
   background-color: $white-smoke-color;
 }
 
+.section-education {
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: url("../img/bg-education.png") top / 100%;
+    background-attachment: fixed;
+    opacity: .2;
+    z-index: -1;
+  }
+}
+
 .section-video {
   position: relative;
   padding-bottom: 56.25%;
